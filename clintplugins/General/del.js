@@ -7,14 +7,14 @@ module.exports = {
 
     if (!botname) {
       console.error(`Botname not set, you useless fuck.`);
-      return m.reply(`◈━━━━━━━━━━━━━━━━◈\nBot’s fucked. No botname in context. Yell at the dev, dipshit.\n◈━━━━━━━━━━━━━━━━◈`);
+      return m.reply(`Bot’s fucked. No botname in context. Yell at the dev, dipshit..`);
     }
 
     try {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\nShit’s broken, can’t read your number! Try again, you dumbass.\nCheck https://github.com/xhclintohn/Toxic-MD for help.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Shit’s broken, can’t read your number! Try again, you dumbass..`);
       }
 
       const userNumber = m.sender.split('@')[0];
@@ -52,7 +52,7 @@ module.exports = {
 
       // If no replied-to or quoted message
       if (!deleteKey) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\nReply to or quote a message to delete, you dumbass! 😈\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Reply to or quote a message to delete, you dumbass! 😈`);
       }
 
       // If in group, check bot admin status for non-bot messages
@@ -62,7 +62,7 @@ module.exports = {
         const isBotAdmin = groupAdmins.includes(botJid);
 
         if (!isBotAdmin) {
-          return m.reply(`◈━━━━━━━━━━━━━━━━◈\nI’m not an admin, you lazy fuck! Can’t delete @${quotedSender.split('@')[0]}’s message. Promote me, @${userNumber}!\n◈━━━━━━━━━━━━━━━━◈`, {
+          return m.reply(`I’m not an admin, you lazy fuck! Can’t delete @${quotedSender.split('@')[0]}’s message. Promote me, @${userNumber}!`, {
             mentions: [quotedSender, m.sender]
           });
         }
@@ -71,13 +71,13 @@ module.exports = {
       // Delete the message
       await client.sendMessage(m.key.remoteJid, { delete: deleteKey });
 
-      await m.reply(`◈━━━━━━━━━━━━━━━━◈\nMessage deleted, you sneaky bastard @${userNumber}! 🗑️\nPowered by *${botname}* 😈\n◈━━━━━━━━━━━━━━━━◈`, {
+      await m.reply(`Message deleted, you sneaky bastard @${userNumber}! 🗑️\nPowered by *${botname}* 😈`, {
         mentions: [m.sender]
       });
 
     } catch (error) {
       console.error(`Del command fucked up: ${error.stack}`);
-      await m.reply(`◈━━━━━━━━━━━━━━━━◈\nShit broke, @${m.sender.split('@')[0]}! Couldn’t delete the message. Try again, you useless fuck.\nCheck https://github.com/xhclintohn/Toxic-MD for help.\n◈━━━━━━━━━━━━━━━━◈`, {
+      await m.reply(`Shit broke, @${m.sender.split('@')[0]}! Couldn’t delete the message. Try again, you useless fuck.`, {
         mentions: [m.sender]
       });
     }
