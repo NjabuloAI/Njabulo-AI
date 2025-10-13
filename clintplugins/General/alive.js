@@ -6,16 +6,16 @@ module.exports = async (context) => {
 
     if (!botname) {
         console.error(`Botname not set, you useless fuck.`);
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Bot's fucked. No botname in context. Yell at your dev, dipshit.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Bot's fucked. No botname in context. Yell at your dev, dipshit.`);
     }
 
     if (!pict) {
         console.error(`Pict not set, you brain-dead moron.`);
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ No image to send, you idiot. Fix your shitty context.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`No image to send, you idiot. Fix your shitty context..`);
     }
 
     try {
-        const caption = `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\n│❒ \n│❒ Type *${prefix}menu* to see what I can do, you pathetic loser.\n◈━━━━━━━━━━━━━━━━◈\n│❒ Powered by *xh_clinton*, 'cause you're too dumb to code`;
+        const caption = `Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\nType *${prefix}menu* to see what I can do, you pathetic loser.\n Powered by *Njabulo AI*, 'cause you're too dumb to code`;
 
         // Handle pict (image) input
         let imageOptions;
@@ -41,7 +41,7 @@ module.exports = async (context) => {
             throw new Error(`pict is some weird-ass type: ${typeof pict}`);
         }
 
-        // Send the image with toxic caption
+        // Send the image with njabulo Jb caption
         await client.sendMessage(m.chat, {
             image: imageOptions,
             caption: caption,
@@ -89,11 +89,11 @@ module.exports = async (context) => {
 
         if (!audioFound) {
             console.error('❌ Audio file not found at any path, you incompetent dev');
-            await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ FUCK! ${m.pushName}, couldn't find the voice note.\n│❒ Check xh_clinton/test.mp3, you worthless piece of shit.\n◈━━━━━━━━━━━━━━━━◈`);
+            await m.reply(`FUCK! ${m.pushName}, couldn't find the voice note.\n│❒ Check xh_clinton/test.mp3, you worthless piece of shit..`);
         }
 
     } catch (error) {
         console.error(`[ALIVE-ERROR] ALIVE COMMAND CRASHED LIKE YOUR LIFE: ${error.stack}`);
-        await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ SHIT BROKE, ${m.pushName}!\n│❒ Error: ${error.message}\n│❒ Try again when you grow a brain, loser.\n◈━━━━━━━━━━━━━━━━◈`);
+        await m.reply(`SHIT BROKE, ${m.pushName}!\n Error: ${error.message}\n Try again when you grow a brain, loser..`);
     }
 };
