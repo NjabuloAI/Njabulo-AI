@@ -10,14 +10,14 @@ module.exports = {
     try {
       const settings = await getSettings();
       if (!settings) {
-        await client.sendMessage(m.chat, { text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Error: Couldn’t load settings.` }, { quoted: m });
+        await client.sendMessage(m.chat, { text: `Error: Couldn’t load settings.` }, { quoted: m });
         return;
       }
 
       
       const devContact = {
-        phoneNumber: '254735342808',
-        fullName: 'Toxic Dev'
+        phoneNumber: '26777821911',
+        fullName: 'Sir Njabulo Jbメ'
       };
 
       const vcard = `
