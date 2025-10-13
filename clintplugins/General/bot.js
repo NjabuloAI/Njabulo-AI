@@ -35,7 +35,7 @@ module.exports = async (context) => {
     if (!audioPath) {
       console.error('❌ Audio file not found at any paths:', possibleAudioPaths);
       return client.sendMessage(m.chat, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, ${m.pushName}, where the fuck is bot.mp3? File’s missing, moron. 😡`
+        text: `Yo, ${m.pushName}, where the fuck is bot.mp3? File’s missing, moron. 😡`
       }, { quoted: m });
     }
 
@@ -49,10 +49,10 @@ module.exports = async (context) => {
     }, { quoted: m });
 
     // Send follow-up text with .repo button
-    const repoText = `◈━━━━━━━━━━━━━━━━◈\n│❒ Hit the button below to view repo, ${m.pushName}! 😈\n◈━━━━━━━━━━━━━━━━◈`;
+    const repoText = `Hit the button below to view repo, ${m.pushName}! 😈`;
     await client.sendMessage(m.chat, {
       text: repoText,
-      footer: `TPσɯҽɾҽԃ Ⴆყ Toxic-MD`,
+      footer: `TPσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ JႦ`,
       buttons: [
         { buttonId: `${prefix}repo`, buttonText: { displayText: `📖 ${toFancyFont('REPO')}` }, type: 1 }
       ],
@@ -63,7 +63,7 @@ module.exports = async (context) => {
   } catch (error) {
     console.error('Error in bot command:', error);
     await client.sendMessage(m.chat, {
-      text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Shit went sideways, ${m.pushName}. Can’t send bot.mp3. Try again later, loser. 😒`
+      text: `Shit went sideways, ${m.pushName}. Can’t send bot.mp3. Try again later, loser. 😒`
     }, { quoted: m });
   }
 };
