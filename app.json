@@ -1,8 +1,8 @@
 {
-  "name": "Toxic-MD",
+  "name": "Njabulo-AI",
   "description": "⚡ A lightning-fast WhatsApp bot with multi-device support, built on Node.js & Baileys.",
-  "website": "https://github.com/xhclintohn/Toxic-v2#readme",
-  "repository": "https://github.com/xhclintohn/Toxic-v2.git",
+  "website": "https://github.com/NjabuloAI/Njabulo-AI#readme",
+  "repository": "https://github.com/NjabuloAI/Njabulo-AI.git",
   "logo": "https://i.ibb.co/mChCjFPL/ad76194e124ff34e.jpg",
   "success_url": "/",
   
@@ -13,7 +13,7 @@
     },
     "CODE": {
       "description": "🌍 *Required* – Default country code (e.g., 254 for Kenya).",
-      "value": "254",
+      "value": "26777821911",
       "required": true
     }
   },
