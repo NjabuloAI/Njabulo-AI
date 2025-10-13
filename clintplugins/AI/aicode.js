@@ -1,3 +1,5 @@
+//aicode.js
+
 module.exports = async (context) => {
     const { client, m, text, botname, fetchJson, prefix } = context;
     const num = m.sender; 
