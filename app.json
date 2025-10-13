@@ -2,7 +2,7 @@
   "name": "Njabulo-AI",
   "description": "⚡ A lightning-fast WhatsApp bot with multi-device support, built on Node.js & Baileys.",
   "website": "https://github.com/NjabuloAI/Njabulo-AI#readme",
-  "repository": "https://github.com/NjabuloAI/Njabulo-AI.git",
+  "repository": "https://github.com/NjabuloAI/Njabulo-AI",
   "logo": "https://i.ibb.co/mChCjFPL/ad76194e124ff34e.jpg",
   "success_url": "/",
   
@@ -13,7 +13,7 @@
     },
     "CODE": {
       "description": "🌍 *Required* – Default country code (e.g., 254 for Kenya).",
-      "value": "26777821911",
+      "value": "267",
       "required": true
     }
   },
