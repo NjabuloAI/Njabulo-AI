@@ -8,15 +8,11 @@ if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir);
 }
 
-const isValidYouTubeUrl = (url) => {
-  return /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=|shorts\/|embed\/)?[A-Za-z0-9_-]{11}(\?.*)?$/.test(url);
-};
-
 module.exports = async (context) => {
   const { client, m, text } = context;
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+    return `${message}\n> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
   };
 
   if (!text) {
@@ -46,6 +42,25 @@ module.exports = async (context) => {
         { quoted: m, ad: true }
       );
     }
+
+    const videoInfo = `*🍥Njabulo Jb download ytmp3&mp4🍥*\n\n`+
+                      `🎧 *Title:* ${video.title}\n` +
+                      `⏰ *Duration:* ${video.duration.timestamp}\n` +
+                      `👀 *Views:* ${video.views}\n` +
+                      `👤 *Uploaded:* ${video.ago}\n` +
+                      `👥 *Channel:* ${video.author.name}\n\n` +
+                     
+                      `*──●─────────: ${video.duration.timestamp}*\n` +
+                      `🔗 *URL:* ${video.url}`;
+
+    await client.sendMessage(
+      m.chat,
+      {
+        image: { url: video.thumbnail },
+        caption: videoInfo,
+      },
+      { quoted: m, ad: true }
+    );
 
     // Use the new API endpoint
     const apiUrl = `https://api.privatezia.biz.id/api/downloader/ytmp3?url=${encodeURIComponent(video.url)}`;
@@ -85,12 +100,6 @@ module.exports = async (context) => {
 
     await client.sendMessage(
       m.chat,
-      { text: formatStylishReply(`Droppin' *${apiData.result.title || video.title}* for ya, fam! Crank it up! 🔥🎧`) },
-      { quoted: m, ad: true }
-    );
-
-    await client.sendMessage(
-      m.chat,
       {
         audio: { url: filePath },
         mimetype: "audio/mpeg",
@@ -98,7 +107,7 @@ module.exports = async (context) => {
         contextInfo: {
           externalAdReply: {
             title: apiData.result.title || video.title,
-            body: `${video.author.name || "Unknown Artist"} | Powered by Toxic-MD`,
+            body: `${video.author.name || "Unknown Artist"}`,
             thumbnailUrl: apiData.result.thumbnail || video.thumbnail || "https://via.placeholder.com/120x90",
             sourceUrl: video.url,
             mediaType: 1,
@@ -107,6 +116,21 @@ module.exports = async (context) => {
         },
       },
       { quoted: m, ad: true }
+    );
+
+    await client.sendMessage(
+      m.chat,
+      { 
+        text: `🎧Droppin' *${apiData.result.title || video.title}* \n🥳 *for ya, fam! Crank it up! 🔥* \n> *follow Join channel have more updates*`,
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤Njabulo Jb🍥",
+         serverMessageId: 143,
+         },
+       },
+      }, { quoted: m, ad: true }
     );
 
     if (fs.existsSync(filePath)) {
