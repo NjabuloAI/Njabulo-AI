@@ -4,11 +4,11 @@ module.exports = async (context) => {
     const { client, m, text, botname } = context;
 
     if (!botname) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Bot’s screwed, no botname set. Yell at your dev, dipshit.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Bot’s screwed, no botname set. Yell at your dev, dipshit.`);
     }
 
     if (!text) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Oi, ${m.pushName}, you forgot the damn prompt! Try: .imagine a badass dragon burning shit.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Oi, ${m.pushName}, you forgot the damn prompt! Try: .imagine a badass dragon burning shit.`);
     }
 
     try {
@@ -21,18 +21,18 @@ module.exports = async (context) => {
 
         const data = await response.json();
         if (!data.status || !data.msg) {
-            return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ API’s useless, ${m.pushName}! No image, try again, loser.\n◈━━━━━━━━━━━━━━━━◈`);
+            return m.reply(`API’s useless, ${m.pushName}! No image, try again, loser.`);
         }
 
         await client.sendMessage(
             m.chat,
             {
                 image: { url: data.msg },
-                caption: `> ρσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`
+                caption: `*🍥General by Njabulo AI*`
             },
             { quoted: m }
         );
     } catch (error) {
-        await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! Couldn’t generate your stupid image. Try later, you whiny prick.\n◈━━━━━━━━━━━━━━━━◈`);
+        await m.reply(`Shit broke, ${m.pushName}! Couldn’t generate your stupid image. Try later, you whiny prick.`);
     }
 };
