@@ -4,7 +4,7 @@ module.exports = async (context) => {
   const { client, m, text } = context;
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+    return `${message}\n*🍥General by Njabulo AI*`;
   };
 
   if (!text) {
@@ -33,7 +33,7 @@ module.exports = async (context) => {
 
     for (let i = 0; i < videos.length; i++) {
       const v = videos[i];
-      replyText += `◈━━━━━━━━━━━━━━━━◈\n`;
+      replyText += `_____________________\n`;
       replyText += `🎬 *Title:* ${v.title}\n`;
       replyText += `📎 *Link:* ${v.url}\n`;
       replyText += `👤 *Author:* ${v.author.name} (${v.author.url})\n`;
@@ -43,7 +43,7 @@ module.exports = async (context) => {
       replyText += `\n`;
     }
 
-    replyText += `◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+    replyText += `________________________\n*🍥 General by Njabulo Jb*`;
 
     await client.sendMessage(
       m.chat,
