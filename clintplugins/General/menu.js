@@ -6,7 +6,7 @@ const { getSettings } = require('../../Database/config');
 module.exports = {
   name: 'menu',
   aliases: ['help', 'commands', 'list'],
-  description: 'Displays the Toxic-MD command menu with interactive buttons',
+  description: 'Displays the *🍥sir Njabulo AIメ* command menu with interactive buttons',
   run: async (context) => {
     const { client, m, mode, pict, botname, text, prefix } = context;
 
@@ -40,11 +40,11 @@ module.exports = {
 
     // Menu text with Njabulo Jb flair
     const menuText = `_______________________\n\n` +
-      `🤖 *Bσƚ*: Njabulo Jb (bow down)\n` +
-      `🔣 *Pɾҽϝιx*: ${effectivePrefix}\n` +
-      `🌐 *Mσԃҽ*: ${mode}\n` +
+      ` *Bσƚ*: Njabulo AIメ *(future AI🍥)*\n` +
+      ` *Pɾҽϝιx*: ${effectivePrefix}\n` +
+      ` *Mσԃҽ*: ${mode}\n` +
       `\n________________________\n\n` +
-      `.`;
+      `*🌐ꜱᴇʟᴇᴄᴛ ᴀɴ ᴀɴ ᴄᴏᴍᴍᴀɴᴅꜱ ʙᴇʟᴏᴡ, ʟᴏꜱᴇʀ*`;
 
     // Interactive message with buttons using dynamic prefix
     const msg = generateWAMessageFromContent(
@@ -68,7 +68,7 @@ module.exports = {
             hasMediaAttachment: true,
           },
           body: { text: menuText },
-          footer: { text: `General by Njabulo Jb ai` },
+          footer: { text: `➥ General by sir Njabulo AIメ` },
           nativeFlowMessage: {
             buttons: [
               {
@@ -82,7 +82,7 @@ module.exports = {
               {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                  title: 'VIEW OPTIONS',
+                  title: 'views Commands',
                   sections: [
                     {
                     title: '📥ɢᴇɴᴇʀᴀʟ ᴄᴏᴍᴍᴅᴀs',
@@ -322,9 +322,9 @@ module.exports = {
             ],
             messageParamsJson: JSON.stringify({
               limited_time_offer: {
-                text: 'Njabulo AI',
+                text: 'AI infoメ',
                 url: 'https://njabulo-repo.vercel.app',
-                copy_code: 'code',
+                copy_code: 'code Manege',
                 expiration_time: Date.now() * 1000,
               },
               bottom_sheet: {
@@ -337,7 +337,7 @@ module.exports = {
           },
           contextInfo: {
             externalAdReply: {
-              title: "Njabulo AI",
+              title: "➥ sir Njabulo AIメ",
               body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
               mediaType: 1,
               thumbnail: pict,
