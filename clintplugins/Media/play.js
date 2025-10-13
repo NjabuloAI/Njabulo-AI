@@ -45,11 +45,9 @@ module.exports = async (context) => {
 
     const videoInfo = `*🍥Njabulo Jb download ytmp3&mp4🍥*\n\n`+
                       `🎧 *Title:* ${video.title}\n` +
-                      `⏰ *Duration:* ${video.duration.timestamp}\n` +
                       `👀 *Views:* ${video.views}\n` +
                       `👤 *Uploaded:* ${video.ago}\n` +
-                      `👥 *Channel:* ${video.author.name}\n\n` +
-                     
+                                   
                       `*──●─────────: ${video.duration.timestamp}*\n` +
                       `🔗 *URL:* ${video.url}`;
 
@@ -121,13 +119,21 @@ module.exports = async (context) => {
     await client.sendMessage(
       m.chat,
       { 
-        text: `🎧Droppin' *${apiData.result.title || video.title}* \n🥳 *for ya, fam! Crank it up! 🔥* \n> *follow Join channel have more updates*`,
+         text: `🎧Droppin' ${apiData.result.title || video.title} \n *🍥Processing, General by Njabulo AI*`,
         contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
          newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤Njabulo Jb🍥",
+         newsletterName: "╭••➤®Njabulo AI🍥",
          serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "Njabulo AI",
+         previewType: "PHOTO",
+         thumbnail: apiData.result.thumbnail || video.thumbnail || "https://via.placeholder.com/120x90",
+         renderLargerThumbnail: true,
+        sourceUrl: 'https://www.facebook.com/profile.php?id=100094314013209'
          },
        },
       }, { quoted: m, ad: true }
