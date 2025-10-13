@@ -5,11 +5,11 @@ module.exports = async (context) => {
     const { client, m, text, botname } = context;
 
     if (!botname) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Bot’s screwed, no botname set. Yell at your dev, dipshit.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Bot’s screwed, no botname set. Yell at your dev, dipshit.`);
     }
 
     if (!text && !m.quoted) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Oi, ${m.pushName}, you forgot the damn image URL or to reply to an image, you moron! Example: .remini https://example.com/image.png or reply to an image.\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`Oi, ${m.pushName}, you forgot the damn image URL or to reply to an image, you moron! Example: .remini https://example.com/image.png or reply to an image.`);
     }
 
     let imageUrl = text;
@@ -39,12 +39,12 @@ module.exports = async (context) => {
             imageUrl = uploadData.url;
         } catch (uploadError) {
             console.error(`Failed to upload quoted image: ${uploadError.message}`);
-            return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! Couldn’t upload your stupid image. Try again, you whiny prick.\n◈━━━━━━━━━━━━━━━━◈`);
+            return m.reply(`Shit broke, ${m.pushName}! Couldn’t upload your stupid image. Try again, you whiny prick.`);
         }
     }
 
     if (!imageUrl) {
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ No valid image URL or quoted image, ${m.pushName}, you clueless twit!\n◈━━━━━━━━━━━━━━━━◈`);
+        return m.reply(`No valid image URL or quoted image, ${m.pushName}, you clueless twit!`);
     }
 
     try {
@@ -60,7 +60,7 @@ module.exports = async (context) => {
 
         const data = await response.json();
         if (!data.success || !data.result || !data.result.image_url) {
-            return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ API’s useless, ${m.pushName}! ${data.msg || 'No enhanced image, you loser.'} Try again, dumbass.\n◈━━━━━━━━━━━━━━━━◈`);
+            return m.reply(`API’s useless, ${m.pushName}! ${data.msg || 'No enhanced image, you loser.'} Try again, dumbass..`);
         }
 
         const { image_url } = data.result;
@@ -112,9 +112,9 @@ module.exports = async (context) => {
         }
 
         // Send caption
-        await client.sendMessage(m.chat, { text: `> ρσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ` }, { quoted: m });
+        await client.sendMessage(m.chat, { text: `*🍥General by sir Njabulo AI*` }, { quoted: m });
     } catch (error) {
         console.error(`Error in remini: ${error.message}`);
-        await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! Couldn’t enhance your stupid image. Try later, you whiny prick.\n◈━━━━━━━━━━━━━━━━◈`);
+        await m.reply(`Shit broke, ${m.pushName}! Couldn’t enhance your stupid image. Try later, you whiny prick.\n◈━━━━━━━━━━━━━━━━◈`);
     }
 };
