@@ -4,7 +4,7 @@ const { default: toxicConnect, DisconnectReason } = require("@whiskeysockets/bai
 const { getSettings, getSudoUsers, addSudoUser } = require("../Database/config");
 const { commands, totalCommands } = require("../Handler/commandHandler");
 
-const botName = process.env.BOTNAME || "Toxic-MD";
+const botName = process.env.BOTNAME || "Njabulo-AI";
 let hasSentStartMessage = false;
 
 async function connectionHandler(socket, connectionUpdate, reconnect) {
@@ -101,22 +101,13 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
 
       const firstMessage = isNewUser
         ? [
-            `◈━━━━━━━━━━━━━━━━◈`,
-            `│❒ *${getGreeting()}*`,
-            `│❒ Welcome to *${botName}*! You're now connected.`,
-            ``,
+           `🌠 *${getGreeting()}*`,
             `✨ *Bot Name*: ${botName}`,
             `🔧 *Mode*: ${settings.mode}`,
             `➡️ *Prefix*: ${settings.prefix}`,
             `📋 *Commands*: ${totalCommands}`,
             `🕒 *Time*: ${getCurrentTime()}`,
-            `💾 *Database*: Postgres SQL`,
-            `📚 *Library*: Baileys`,
-            ``,
-            `│❒ *New User Alert*: You've been added to the sudo list.`,
-            ``,
-            `│❒ *Credits*: xh_clinton`,
-            `◈━━━━━━━━━━━━━━━━◈`
+            `*🍥 General by sor Njabulo AI*` 
           ].join("\n")
         : [
             `🌠 *${getGreeting()}*`,
@@ -162,17 +153,17 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
             },
             {
               buttonId: `${settings.prefix || ''}ping`,
-              buttonText: { displayText: `⏱️ ${toFancyFont('SETTINGS')}` },
+              buttonText: { displayText: `⏱️ ${toFancyFont('PING')}` },
               type: 1
             },
             {
               buttonId: `${settings.prefix || ''}alive`,
-              buttonText: { displayText: `⏰ ${toFancyFont('SETTINGS')}` },
+              buttonText: { displayText: `⏰ ${toFancyFont('ALIVE')}` },
               type: 1
             },
             {
               buttonId: `${settings.prefix || ''}fullmenu`,
-              buttonText: { displayText: `📋 ${toFancyFont('SETTINGS')}` },
+              buttonText: { displayText: `📋 ${toFancyFont('FULLMENU')}` },
               type: 1
             },
             {
