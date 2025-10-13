@@ -4,7 +4,7 @@ module.exports = async (context) => {
   const { client, m, text } = context;
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+    return `${message}\n*🍥General by sir Njabulo AI*`;
   };
 
   // Helper: download image into a Buffer (returns { buffer, mime } or throws)
@@ -84,7 +84,7 @@ module.exports = async (context) => {
             m.chat,
             {
               image: { url: imgUrl },
-              caption: formatStylishReply(`🔎 Fallback send for: ${text}\n🌐 Source: Toxic-MD\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`),
+              caption: formatStylishReply(`🔎 Fallback send for: ${text}\n🌐 Source: Njabulo AI\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`),
             },
             { quoted: m }
           );
