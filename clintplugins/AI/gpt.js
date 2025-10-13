@@ -4,11 +4,11 @@ module.exports = async (context) => {
   const { client, m, text, botname } = context;
 
   if (!botname) {
-    return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Bot’s screwed, no botname set. Yell at your dev, dipshit.\n◈━━━━━━━━━━━━━━━━◈`);
+    return m.reply(`Bot’s screwed, no botname set. Yell at your dev, dipshit..`);
   }
 
   if (!text) {
-    return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Oi, ${m.pushName}, you forgot the damn prompt! Try: .gpt What’s the meaning of life?\n◈━━━━━━━━━━━━━━━━◈`);
+    return m.reply(`Oi, ${m.pushName}, you forgot the damn prompt! Try: .gpt What’s the meaning of life?`);
   }
 
   try {
@@ -25,11 +25,11 @@ module.exports = async (context) => {
 
     const data = await response.json();
     if (!data.status || !data.response) {
-      return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ API’s useless, ${m.pushName}! No answer, try again, loser.\n◈━━━━━━━━━━━━━━━━◈`);
+      return m.reply(`API’s useless, ${m.pushName}! No answer, try again, loser.`);
     }
 
-    await m.reply(`${data.response}\n\n> ρσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ | Created by ${data.creator}`);
+    await m.reply(`${data.response}`);
   } catch (error) {
-    await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! API’s down, try later, you whiny prick.\n◈━━━━━━━━━━━━━━━━◈`);
+    await m.reply(`Shit broke, ${m.pushName}! API’s down, try later, you whiny prick.`);
   }
 };
