@@ -22,12 +22,12 @@ module.exports = async (context) => {
                 return await client.sendMessage(m.chat, { text: `🚫 *Number ${number} is not registered on WhatsApp!* Please use a valid WhatsApp number.` }, { quoted: m });
             }
 
-            const replyText = `📱 *Pairing for ${number}*\n\nTo get your pairing code, visit https://toxicpairing.com\n\nFollow the instructions there to obtain your pairing code and link your device.\n\n◈━━━━━━━━━━━━━━━━◈\nPowered by *𝐓𝐎XIC-MD 𝐕3*`;
+            const replyText = `📱 *Pairing for ${number}*\n\nTo get your pairing code, visit https://pair-code.co.\n\nFollow the instructions there to obtain your pairing code and link your device.\n\n◈━━━━━━━━━━━━━━━━◈\nPowered by *𝐓𝐎XIC-MD 𝐕3*`;
 
             await client.sendMessage(m.chat, { text: replyText }, { quoted: m });
         }
     } catch (error) {
         console.error('Error in pair command:', error);
-        await client.sendMessage(m.chat, { text: `⚠️ *Oops! Failed to process pairing:* ${error.message}\n\nVisit https://github.com/xhclintohn/Toxic-MD for pairing instructions.` }, { quoted: m });
+        await client.sendMessage(m.chat, { text: `⚠️ *Oops! Failed to process pairing:* ${error.message}\n\nVisit for pairing instructions.` }, { quoted: m });
     }
 };
