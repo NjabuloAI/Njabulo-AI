@@ -3,7 +3,7 @@ module.exports = async (context) => {
   const axios = require("axios");
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈`;
+    return `${message}\n`;
   };
 
   // Check if text is provided
