@@ -1,4 +1,4 @@
-module.exports = async (context) => {
+  module.exports = async (context) => {
   const { client, m, text, botname, prefix = '' } = context;
 
   const toFancyFont = (text, isUpperCase = false) => {
@@ -39,36 +39,142 @@ module.exports = async (context) => {
     const createdDate = new Date(repoInfo.createdAt).toLocaleDateString('en-GB');
     const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
 
-    const replyText = `◈━━━━━━━━━━━━━━━━◈\n│❒ *${botname} Repo*\n\n` +
+const repoText = `__________________________________\n\n` +
                      `🌟 *Sƚαɾʂ*: ${repoInfo.stars} (y’all better star)\n` +
                      `🔗 *Fσɾƙʂ*: ${repoInfo.forks} (do fork)\n` +
                      `📅 *Cɾҽαƚҽԃ*: ${createdDate} (born to rule)\n` +
                      `🕒 *Lαʂƚ Uρԃαƚҽԃ*: ${lastUpdateDate} (still fresh)\n` +
                      `👤 *Oɯɳҽɾ*: ${repoInfo.owner} (that’s me)\n` +
                      `🔍 *Vιʂιƚ*: ${repoInfo.htmlUrl} (check the repo)\n\n` +
-                     `│❒ Wanna know the genius behind this? Hit the button below!`;
+                     `__________________________________`;
 
-    await client.sendMessage(m.chat, {
-      text: replyText,
-      footer: `Pσɯҽɾҽԃ Ⴆყ ${botname}`,
-      buttons: [
-        { buttonId: `${prefix}dev`, buttonText: { displayText: `👤 ${toFancyFont('DEV')}` }, type: 1 }
-      ],
-      headerType: 1,
-      viewOnce: true,
-      contextInfo: {
-        externalAdReply: {
-          showAdAttribution: false,
-          title: `${botname}`,
-          body: `Yo! Don’t fuck this up.`,
-          sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
-          mediaType: 1,
-          renderLargerThumbnail: true
-        }
+
+    // Interactive message with buttons using dynamic prefix
+    const msg = generateWAMessageFromContent(
+      m.chat,
+      {
+        interactiveMessage: {
+          header: {
+            documentMessage: {
+              url: 'https://mmg.whatsapp.net/v/t62.7119-24/539012045_745537058346694_1512031191239726227_n.enc?ccb=11-4&oh=01_Q5Aa2QGGiJj--6eHxoTTTTzuWtBgCrkcXBz9hN_y2s_Z1lrABA&oe=68D7901C&_nc_sid=5e03e0&mms3=true',
+              mimetype: 'image/png',
+              fileSha256: '+gmvvCB6ckJSuuG3ZOzHsTBgRAukejv1nnfwGSSSS/4=',
+              fileLength: '1435',
+              pageCount: 0,
+              mediaKey: 'MWO6fI223TY8T0i9onNcwNBBPldWfwp1j1FPKCiJFzw=',
+              fileName: 'Toxic-MD',
+              fileEncSha256: 'ZS8v9tio2un1yWVOOG3lwBxiP+mNgaKPY9+wl5pEoi8=',
+              directPath: '/v/t62.7119-24/539012045_745537058346694_1512031191239726227_n.enc?ccb=11-4&oh=01_Q5Aa2QGGiJj--6eHxoTTTTzuWtBgCrkcXBz9hN_y2s_Z1lrABA&oe=68D7901C&_nc_sid=5e03e0',
+              mediaKeyTimestamp: '1756370084',
+              jpegThumbnail: pict,
+            },
+            hasMediaAttachment: true,
+          },
+          body: { text: repoText },
+          footer: { text: `Pσɯҽɾҽԃ Ⴆყ ${botname}` },
+          nativeFlowMessage: {
+            buttons: [
+              {
+               name: 'cta_url',
+                buttonParamsJson: JSON.stringify({
+                  display_text: 'pair code',
+                  url: 'https://github.com/xhclintohn/Toxic-MD',
+                  merchant_url: 'https://github.com/xhclintohn/Toxic-MD',
+                }),
+              },
+              {
+                name: 'cta_url',
+                buttonParamsJson: JSON.stringify({
+                  display_text: 'GitHub Repo',
+                  url: 'https://github.com/xhclintohn/Toxic-MD',
+                  merchant_url: 'https://github.com/xhclintohn/Toxic-MD',
+                }),
+              },
+              {
+                name: 'single_select',
+                buttonParamsJson: JSON.stringify({
+                  title: 'VIEW OPTIONS',
+                  sections: [
+                    {
+                      title: '🔥 CORE COMMANDS',
+                      highlight_label: '© Toxic-MD',
+                      rows: [
+                        { title: '📜 FULL MENU', description: 'Show all commands', id: `${effectivePrefix}fullmenu` },
+                        { title: '⚠️ DEV', description: "Send developer's contact", id: `${effectivePrefix}dev` },
+                      ],
+                    },
+                    {
+                      title: 'ℹ BOT INFO',
+                      highlight_label: '© Toxic-MD',
+                      rows: [
+                        { title: '🔥 PING', description: 'Check bot speed', id: `${effectivePrefix}ping` },
+                        { title: '💯 REPO', description: 'Get bot repository', id: `${effectivePrefix}repo` },
+                      ],
+                    },
+                  ],
+                }),
+              },
+            ],
+            messageParamsJson: JSON.stringify({
+              limited_time_offer: {
+                text: 'Toxic-MD',
+                url: 'https://github.com/xhclintohn/Toxic-MD',
+                copy_code: 'TOXIC',
+                expiration_time: Date.now() * 1000,
+              },
+              bottom_sheet: {
+                in_thread_buttons_limit: 2,
+                divider_indices: [1, 2],
+                list_title: 'Select Command',
+                button_title: 'Toxic-MD',
+              },
+            }),
+          },
+          contextInfo: {
+            externalAdReply: {
+              title: `${botname}`,
+              body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
+              mediaType: 1,
+              thumbnail: pict,
+              mediaUrl: '',
+              sourceUrl: 'https://github.com/xhclintohn/Toxic-MD',
+              showAdAttribution: false,
+              renderLargerThumbnail: true,
+            },
+          },
+        },
+      },
+      { quoted: m }
+    );
+
+    await client.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+
+    // Audio message logic
+    const possibleAudioPaths = [
+      path.join(__dirname, 'xh_clinton', 'menu.mp3'),
+      path.join(process.cwd(), 'xh_clinton', 'menu.mp3'),
+      path.join(__dirname, '..', 'xh_clinton', 'menu.mp3'),
+    ];
+
+    let audioPath = null;
+    for (const possiblePath of possibleAudioPaths) {
+      if (fs.existsSync(possiblePath)) {
+        audioPath = possiblePath;
+        break;
       }
-    }, { quoted: m });
-  } catch (error) {
-    console.error('Error in repo command:', error);
-    await client.sendMessage(m.chat, { text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Couldn’t grab repo info, something’s fucked up. Check it yourself: https://github.com/xhclintohn/Toxic-MD` }, { quoted: m });
-  }
+    }
+
+    if (audioPath) {
+      await client.sendMessage(
+        m.chat,
+        {
+          audio: { url: audioPath },
+          ptt: true,
+          mimetype: 'audio/mpeg',
+          fileName: 'menu.mp3',
+        },
+        { quoted: m }
+      );
+    }
+  },
 };
