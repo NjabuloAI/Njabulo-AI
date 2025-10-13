@@ -119,28 +119,19 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
             `◈━━━━━━━━━━━━━━━━◈`
           ].join("\n")
         : [
-            `◈━━━━━━━━━━━━━━━━◈`,
-            `│❒ *${getGreeting()}*`,
-            `│❒ Welcome back to *${botName}*! Connection established.`,
-            ``,
+            `🌠 *${getGreeting()}*`,
             `✨ *Bot Name*: ${botName}`,
             `🔧 *Mode*: ${settings.mode}`,
             `➡️ *Prefix*: ${settings.prefix}`,
             `📋 *Commands*: ${totalCommands}`,
             `🕒 *Time*: ${getCurrentTime()}`,
-            `💾 *Database*: Postgres SQL`,
-            `📚 *Library*: Baileys`,
-            ``,
-            `│❒ Ready to proceed? Select an option below.`,
-            ``,
-            `│❒ *Credits*: xh_clinton`,
-            `◈━━━━━━━━━━━━━━━━◈`
+            `*🍥 General by sor Njabulo AI*`
           ].join("\n");
 
       const secondMessage = [
-        `◈━━━━━━━━━━━━━━━━◈`,
-        `│❒ Please select an option to continue:`,
-        `◈━━━━━━━━━━━━━━━━◈`
+        `📋`,
+        `*Please select an option to continue:*`,
+        `📜`
       ].join("\n");
 
       try {
@@ -170,6 +161,21 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
               type: 1
             },
             {
+              buttonId: `${settings.prefix || ''}ping`,
+              buttonText: { displayText: `⏱️ ${toFancyFont('SETTINGS')}` },
+              type: 1
+            },
+            {
+              buttonId: `${settings.prefix || ''}alive`,
+              buttonText: { displayText: `⏰ ${toFancyFont('SETTINGS')}` },
+              type: 1
+            },
+            {
+              buttonId: `${settings.prefix || ''}fullmenu`,
+              buttonText: { displayText: `📋 ${toFancyFont('SETTINGS')}` },
+              type: 1
+            },
+            {
               buttonId: `${settings.prefix || ''}menu`,
               buttonText: { displayText: `📖 ${toFancyFont('MENU')}` },
               type: 1
@@ -196,10 +202,10 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
     }
 
     console.log(
-      `◈━━━━━━━━━━━━━━━━◈\n` +
-      `│❒ Bot successfully connected to WhatsApp ✅💫\n` +
-      `│❒ Loaded ${totalCommands} plugins. Toxic-MD is ready to dominate! 😈\n` +
-      `┗━━━━━━━━━━━━━━━┛`
+      `⏱️\n` +
+      ` Bot successfully connected to WhatsApp ✅💫\n` +
+      ` Loaded ${totalCommands} plugins. Njabulo AI is ready to dominate! 😈\n` +
+      `⏰`
     );
   }
 }
