@@ -14,7 +14,7 @@ module.exports = {
       await client.sendMessage(
         m.chat,
         {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo ${m.pushName}, what's with the extra bullshit? Just say *${prefix}menu*, moron. 🖕\n┗━━━━━━━━━━━━━━━┛`,
+          text: `Yo ${m.pushName}, what's with the extra bullshit? Just say *${prefix}menu*, moron. 🖕`,
         },
         { quoted: m, ad: true }
       );
@@ -38,13 +38,13 @@ module.exports = {
         .join('');
     };
 
-    // Menu text with Toxic-MD flair
+    // Menu text with Njabulo Jb flair
     const menuText = `_______________________\n\n` +
       `🤖 *Bσƚ*: Njabulo Jb (bow down)\n` +
-      `🔣 *Pɾҽϝιx*: ${effectivePrefix} (learn it, dumbass)\n` +
-      `🌐 *Mσԃҽ*: ${mode} (deal with it)\n` +
+      `🔣 *Pɾҽϝιx*: ${effectivePrefix}\n` +
+      `🌐 *Mσԃҽ*: ${mode}\n` +
       `\n________________________\n\n` +
-      `*Select an option Below, Loser.* 😈`;
+      `.`;
 
     // Interactive message with buttons using dynamic prefix
     const msg = generateWAMessageFromContent(
@@ -59,7 +59,7 @@ module.exports = {
               fileLength: '1435',
               pageCount: 0,
               mediaKey: 'MWO6fI223TY8T0i9onNcwNBBPldWfwp1j1FPKCiJFzw=',
-              fileName: 'Njabulo-Jb',
+              fileName: 'Njabulo AI',
               fileEncSha256: 'ZS8v9tio2un1yWVOOG3lwBxiP+mNgaKPY9+wl5pEoi8=',
               directPath: '/v/t62.7119-24/539012045_745537058346694_1512031191239726227_n.enc?ccb=11-4&oh=01_Q5Aa2QGGiJj--6eHxoTTTTzuWtBgCrkcXBz9hN_y2s_Z1lrABA&oe=68D7901C&_nc_sid=5e03e0',
               mediaKeyTimestamp: '1756370084',
@@ -68,7 +68,7 @@ module.exports = {
             hasMediaAttachment: true,
           },
           body: { text: menuText },
-          footer: { text: `Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ` },
+          footer: { text: `General by Njabulo Jb ai` },
           nativeFlowMessage: {
             buttons: [
               {
@@ -322,22 +322,22 @@ module.exports = {
             ],
             messageParamsJson: JSON.stringify({
               limited_time_offer: {
-                text: 'Njabulo-Jb',
+                text: 'Njabulo AI',
                 url: 'https://njabulo-repo.vercel.app',
-                copy_code: 'NjabuloJb',
+                copy_code: 'code',
                 expiration_time: Date.now() * 1000,
               },
               bottom_sheet: {
                 in_thread_buttons_limit: 2,
                 divider_indices: [1, 2],
                 list_title: 'Select Command',
-                button_title: 'Njabulo-Jb',
+                button_title: 'Njabulo AI',
               },
             }),
           },
           contextInfo: {
             externalAdReply: {
-              title: "Njabulo Jb",
+              title: "Njabulo AI",
               body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
               mediaType: 1,
               thumbnail: pict,
