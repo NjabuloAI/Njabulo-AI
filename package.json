@@ -18,10 +18,10 @@
     "whatsapp-multi-device"
   ],
   "base": "https://github.com/DikaArdnt/Hisoka-Morou",
-  "author": "NjabuloAI",
+  "author": "xhclinton",
   "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "github:tenka-san/WaBails",    
+    "@whiskeysockets/baileys": "github:nstar-y/bail",    
     "@adiwajshing/keyed-db": "^0.2.4",
     "@distube/ytdl-core": "^4.15.1",
     "@hapi/boom": "^10.0.0",
@@ -112,5 +112,4 @@
     "url": "https://github.com/xhclintohn/Toxic-v2/issues"
   },
   "homepage": "https://github.com/xhclintohn/Toxic-v2#readme"
-  }
-    
+}
