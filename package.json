@@ -1,5 +1,5 @@
 {
-  "name": "Toxic-V3",
+  "name": "Njabulo-AI",
   "version": "2.0.0",
   "description": "WhatsApp Multi Device Bot",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "whatsapp-multi-device"
   ],
   "base": "https://github.com/DikaArdnt/Hisoka-Morou",
-  "author": "xhclinton",
+  "author": "NjabuloAI",
   "license": "MIT",
   "dependencies": {
     "@whiskeysockets/baileys": "github:nstar-y/bail",    
@@ -55,7 +55,7 @@
     "gemini-ai": "^1.1.0",
     "fs": "^0.0.1-security",
     "discord-mongoose-economy": "^1.2.0",
-    "function-main": "git+https://github.com/xhclintohn/Function-Main.git",
+    "function-main": "git+https://github.com/NjabuloAI/Function-Main.git",
     "g4f": "^1.1.0",
     "google-tts-api": "^2.0.2",
     "human-readable": "^0.2.1",
@@ -106,10 +106,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xhclintohn/Toxic-v2.git"
+    "url": "git+https://github.com/NjabuloAI/Njabulo-AI.git"
   },
   "bugs": {
-    "url": "https://github.com/xhclintohn/Toxic-v2/issues"
+    "url": "https://github.com/NjabuloAI/Njabulo-AI/issues"
   },
-  "homepage": "https://github.com/xhclintohn/Toxic-v2#readme"
+  "homepage": "https://github.com/NjabuloAI/Njabulo-AI#readme"
 }
