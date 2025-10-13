@@ -1,4 +1,4 @@
-//advice.js
+//advices.js
 
 const advice = require("badadvice");
 
