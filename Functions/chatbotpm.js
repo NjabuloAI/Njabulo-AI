@@ -51,11 +51,17 @@ module.exports = async (client, m, store, chatbotpmSetting) => {
             if (!data.status || !data.response) { 
                 throw new Error("Invalid API response: missing status or response");
             }
-            await client.sendMessage(
-                m.key.remoteJid,
-                { text: data.response }, 
-                { quoted: m }
-            );
+            await client.sendMessage(m.key.remoteJid,{ 
+                text: data.response,
+                contextInfo: {
+                 isForwarded: true,
+                   forwardedNewsletterMessageInfo: {
+                   newsletterJid: '120363399999197102@newsletter',
+                    newsletterName: "╭••➤®Njabulo AI🍥",
+                       serverMessageId: 143,
+                   }
+                }
+            }, { quoted: m });
         } catch (e) {
             console.error(`Toxic-MD ChatbotPM Error:`, e);
             await client.sendMessage(
