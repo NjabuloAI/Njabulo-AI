@@ -9,7 +9,7 @@ if (!fs.existsSync(tempDir)) {
 }
 
 module.exports = async (context) => {
-  const { client, m, text } = context;
+  const { client, m, pict, text } = context;
 
   const formatStylishReply = (message) => {
     return `${message}\n> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
@@ -43,7 +43,7 @@ module.exports = async (context) => {
       );
     }
 
-    const videoInfo = `*🍥Njabulo Jb download ytmp3&mp4🍥*\n\n`+
+    const videoInfo = `*🍥General by Njabulo AI*\n\n`+
                       `🎧 *Title:* ${video.title}\n` +
                       `👀 *Views:* ${video.views}\n` +
                       `👤 *Uploaded:* ${video.ago}\n` +
@@ -131,7 +131,7 @@ module.exports = async (context) => {
          externalAdReply: {
          title: "Njabulo AI",
          previewType: "PHOTO",
-         thumbnail: apiData.result.thumbnail || video.thumbnail || "https://via.placeholder.com/120x90",
+         thumbnail: pict,
          renderLargerThumbnail: true,
         sourceUrl: 'https://www.facebook.com/profile.php?id=100094314013209'
          },
