@@ -15,7 +15,7 @@ fetch('/settings.js')
       <h2>BOT STATUS</h2>
       <p>BOT NAME: ${settings.botname}</p>
       <p>MODE: ${settings.mode}</p>
-      <p>PREFIX:. ${settings.prefix}</p>
+      <p>PREFIX: ${settings.prefix}</p>
     `;
     container.appendChild(statusSection);
   })
