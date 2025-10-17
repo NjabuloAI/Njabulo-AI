@@ -13,7 +13,7 @@
     },
     "CODE": {
       "description": "🌍 *Required* – Default country code (e.g., 254 for Kenya).",
-      "value": "254",
+      "value": "267",
       "required": true
     }
   },
