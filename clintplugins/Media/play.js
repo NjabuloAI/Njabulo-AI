@@ -47,7 +47,7 @@ module.exports = async (context) => {
                       `🎧 *Title:* ${video.title}\n` +
                       `👀 *Views:* ${video.views}\n` +
                                    
-                      `0:00 ─〇───── : ${video.duration.timestamp}*\n` +
+                      `0:00 ─〇───── : *${video.duration.timestamp}*\n` +
                       `*⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻*`;
 
     await client.sendMessage(
@@ -55,6 +55,16 @@ module.exports = async (context) => {
       {
         image: { url: video.thumbnail },
         caption: videoInfo,
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo AI🍥",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+        }
+      }
       },
       { quoted: m, ad: true }
     );
@@ -113,29 +123,6 @@ module.exports = async (context) => {
         },
       },
       { quoted: m, ad: true }
-    );
-
-    await client.sendMessage(
-      m.chat,
-      { 
-         text: `🎧Droppin' ${apiData.result.title || video.title} \n *🍥Processing, General by Njabulo AI*`,
-        contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo AI🍥",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "Njabulo AI",
-         previewType: "PHOTO",
-         thumbnail: pict,
-         renderLargerThumbnail: true,
-        sourceUrl: 'https://www.facebook.com/profile.php?id=100094314013209'
-         },
-       },
-      }, { quoted: m, ad: true }
     );
 
     if (fs.existsSync(filePath)) {
