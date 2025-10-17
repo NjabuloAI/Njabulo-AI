@@ -61,8 +61,6 @@ module.exports = async (context) => {
          newsletterJid: '120363399999197102@newsletter',
          newsletterName: "╭••➤®Njabulo AI🍥",
          serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
         }
       }
       },
