@@ -58,43 +58,15 @@ module.exports = {
       const userNumber = m.sender.split('@')[0];
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
-      const botName = 'Toxic-MD';
+      const botName = 'Njabulo-AI';
       const replyText = `
-◎━━━━━━━━━━━━━━━━◎
-│❒ *Pong, @${m.pushName}!* 🏓
 
-│ ⏱️ *Response Time*: ${pingTime}ms
+⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*
 
-│ 🤖 *Bot Name*: ${toFancyFont(botName)}
-
-│ ⏰ *Uptime*: ${uptimeText}
-
-│ 🟢 *Status*: Active
-
-I'm running like a damn beast! 😈
-
-> Pσɯҽɾҽԃ Ⴆყ Toxic-MD
-◎━━━━━━━━━━━━━━━━◎
       `;
 
-const buttons = [
-      {
-        "buttonId":  `.ping`,
-        "buttonText": { "displayText": "➲stᥲtᥙs ρong" },
-        "type": 1
-      },
-      {
-        "buttonId":  `.web`,
-        "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
-        "type": 1
-      }
-    ];
       await client.sendMessage(m.chat, {
-      image: { url: pict},
-        caption: replyText,
-        footer: '₪',
-        buttons: buttons,
-        headerType: 4
+        text: replyText,
       }, { quoted: m });
 
       // Send the audio as a voice note after the ping message
