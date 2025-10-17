@@ -46,10 +46,9 @@ module.exports = async (context) => {
     const videoInfo = `*🍥General by Njabulo AI*\n\n`+
                       `🎧 *Title:* ${video.title}\n` +
                       `👀 *Views:* ${video.views}\n` +
-                      `👤 *Uploaded:* ${video.ago}\n` +
                                    
-                      `*──●─────────: ${video.duration.timestamp}*\n` +
-                      `🔗 *URL:* ${video.url}`;
+                      `0:00 ─〇───── : ${video.duration.timestamp}*\n` +
+                      `*⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻*`;
 
     await client.sendMessage(
       m.chat,
