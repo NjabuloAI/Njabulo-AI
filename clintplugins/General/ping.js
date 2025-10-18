@@ -59,7 +59,7 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
-      
+      const njabuloai = 'https://i.imgur.com/4gu0YP0.jpeg',
       const buttons = [
   {
     buttonId: 'status',
@@ -79,7 +79,7 @@ module.exports = {
 ];
 
 const buttonMessage = {
-  audio: { url: pict },
+  image: { url: njabuloai },
   caption: `⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*`,
   footer: 'Njabulo-AI',
   buttons: buttons,
