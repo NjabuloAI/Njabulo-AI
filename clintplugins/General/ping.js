@@ -79,22 +79,6 @@ I'm running like a damn beast! 😈
       
       await client.sendMessage(m.chat, {
       text: replyText,
-      footer: `Pσɯҽɾҽԃ Ⴆყ ${botname}`,
-      buttons: [
-        { buttonId: `${prefix}dev`, buttonText: { displayText: `👤 ${toFancyFont('DEV')}` }, type: 1 }
-      ],
-      headerType: 1,
-      viewOnce: true,
-      contextInfo: {
-        externalAdReply: {
-          showAdAttribution: false,
-          title: `${botname}`,
-          body: `Yo! Don’t fuck this up.`,
-          sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
-          mediaType: 1,
-          renderLargerThumbnail: true
-        }
-      }
     }, { quoted: m });
 
     } catch (error) {
