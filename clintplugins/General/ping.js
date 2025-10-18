@@ -69,7 +69,7 @@ module.exports = {
 I'm running like a damn beast! 😈
       `;
       await client.sendMessage(m.chat, {
-      text: `🍥*General by Njabulo Jb pong*`,
+      text: `🍥 *General pong*`,
       mentions: [m.sender]
          }, { quoted: {
             key: {
@@ -102,12 +102,29 @@ I'm running like a damn beast! 😈
             }
         } });
 
-     // Send the audio as a voice note after the ping message
-      const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
-      await client.sendMessage(m.chat, {
-        audio: { url: audioUrl },
-        mimetype: 'audio/mp4',
-        ptt: true
+          // Audio message logic
+    const possibleAudioPaths = [
+      path.join(__dirname, 'xh_clinton', 'menu.mp3'),
+      path.join(process.cwd(), 'xh_clinton', 'menu.mp3'),
+      path.join(__dirname, '..', 'xh_clinton', 'menu.mp3'),
+    ];
+
+    let audioPath = null;
+    for (const possiblePath of possibleAudioPaths) {
+      if (fs.existsSync(possiblePath)) {
+        audioPath = possiblePath;
+        break;
+      }
+    }
+
+    if (audioPath) {
+      await client.sendMessage(
+        m.chat,
+        {
+          audio: { url: audioPath },
+          ptt: true,
+          mimetype: 'audio/mpeg',
+          fileName: 'menu.mp3',
       }, { quoted: m });
 
     } catch (error) {
