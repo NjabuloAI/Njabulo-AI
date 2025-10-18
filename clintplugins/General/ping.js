@@ -39,22 +39,19 @@ module.exports = {
           .map(char => fonts[char] || char)
           .join('');
       };
+    
+  try {
+    const totalBlocks = 10;
+    const totalPercentage = 100;
 
-      let progress = 0;
-      const loadingMessage = await client.sendMessage(m.chat, {
-  text: `🏓 *loading▰▱▱▱▱ 0%*`,
-}, { quoted: m });
+    const loadingMessage = await client.sendMessage(m.chat, { text: `Loading... ${"▱".repeat(totalBlocks)} 0%` }, { quoted: m });
 
-     const loadingInterval = setInterval(async () => {
-  progress++;
-  if (progress <= 5) {
-    await client.editMessage(m.chat, loadingMessage.key, {
-      text: `🏓 *loading${"▰".repeat(progress)}${"▱".repeat(5 - progress)} ${progress * 20}%*`,
-    });
-  } else {
-    clearInterval(loadingInterval);
-  }
-}, 500);
+    for (let i = 0; i <= totalBlocks; i++) {
+      const percentage = Math.floor(i * totalPercentage / totalBlocks);
+      const loadingProgress = `${"▰".repeat(i)}${"▱".repeat(totalBlocks - i)}`;
+      await client.editMessage(m.chat, loadingMessage.key, { text: `Loading... ${loadingProgress} ${percentage}%` });
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
       
       // Uptime
       const formatUptime = (seconds) => {
