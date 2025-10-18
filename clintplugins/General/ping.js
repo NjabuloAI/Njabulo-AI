@@ -6,25 +6,25 @@ module.exports = {
   aliases: ['p'],
   description: 'Checks the bot\'s response time, uptime, and status with a sassy vibe',
   run: async (context) => {
-    const { client, m, pict, toxicspeed } = context;
+    const { client, m, pict, prefix, toxicspeed } = context;
 
     try {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Can't read your number, genius! Try again.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎ `);
       }
 
       // Validate toxicspeed
       if (typeof toxicspeed !== 'number' || isNaN(toxicspeed)) {
         console.error(`Invalid toxicspeed: ${toxicspeed}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`, { mentions: [m.sender] });
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.`, { mentions: [m.sender] });
       }
 
       // Retrieve settings to get the current prefix
       const settings = await getSettings();
       if (!settings) {
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Error: Couldn't load settings, you dumb fuck.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Error: Couldn't load settings, you dumb fuck.`);
       }
 
       const toFancyFont = (text, isUpperCase = false) => {
@@ -39,14 +39,7 @@ module.exports = {
           .map(char => fonts[char] || char)
           .join('');
       };
-    
-
-
-        await client.sendMessage(m.chat, { 
-        text: `*General by Njabulo AI pong*`,
-          }, { quoted: m });
-      
-      
+  
       // Uptime
       const formatUptime = (seconds) => {
         const days = Math.floor(seconds / (3600 * 24));
@@ -69,17 +62,17 @@ module.exports = {
       const imageUrl = "https://files.catbox.moe/2sol4t.jpeg";
       const buttons = [
   {
-    buttonId: 'status',
+    buttonId:   `${prefix}uptime`,
     buttonText: { displayText: '📊 Status' },
     type: 1
   },
   {
-    buttonId: 'help',
+    buttonId:  `${prefix}menu`,
     buttonText: { displayText: '🤔 Help' },
     type: 1
   },
   {
-    buttonId: 'ping',
+    buttonId:  `${prefix}alive`,
     buttonText: { displayText: '🏓 Ping' },
     type: 1
   }
