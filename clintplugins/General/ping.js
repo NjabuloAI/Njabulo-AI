@@ -59,7 +59,7 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Toxic-MD';
-      const imageUrl = "https://i.imgur.com/bdx9ImP.jpeg";
+      const imageUrl = "https://files.catbox.moe/eylfig.jpg";
         
       const buttons = [
   {
