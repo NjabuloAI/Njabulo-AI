@@ -66,23 +66,12 @@ module.exports = {
     buttonId:   `${prefix}uptime`,
     buttonText: { displayText: '📊 Status' },
     type: 1
-  },
-  {
-    buttonId:  `${prefix}menu`,
-    buttonText: { displayText: '🤔 Help' },
-    type: 1
-  },
-  {
-    buttonId:  `${prefix}alive`,
-    buttonText: { displayText: '⏰ alive' },
-    type: 1
   }
 ];
       
 const buttonMessage = {
   image: { url: imageUrl },
-  caption: `⏱️ *Response Time*: ${pingTime}ms`,
-  footer: 'Njabulo-AI',
+  caption: `⏱️ 🏓 *sᴛᴀᴛᴜs▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*`,
   buttons: buttons,
   headerType: 1
 };
