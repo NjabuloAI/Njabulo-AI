@@ -102,31 +102,6 @@ I'm running like a damn beast! 😈
             }
         } });
 
-          // Audio message logic
-    const possibleAudioPaths = [
-      path.join(__dirname, 'xh_clinton', 'menu.mp3'),
-      path.join(process.cwd(), 'xh_clinton', 'menu.mp3'),
-      path.join(__dirname, '..', 'xh_clinton', 'menu.mp3'),
-    ];
-
-    let audioPath = null;
-    for (const possiblePath of possibleAudioPaths) {
-      if (fs.existsSync(possiblePath)) {
-        audioPath = possiblePath;
-        break;
-      }
-    }
-
-    if (audioPath) {
-      await client.sendMessage(
-        m.chat,
-        {
-          audio: { url: audioPath },
-          ptt: true,
-          mimetype: 'audio/mpeg',
-          fileName: 'menu.mp3',
-      }, { quoted: m });
-
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
       await client.sendMessage(m.chat, {
