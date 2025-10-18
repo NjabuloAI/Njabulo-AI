@@ -4,8 +4,8 @@ const { generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 const { getSettings } = require('../../Database/config');
 
 module.exports = {
-  name: 'menu',
-  aliases: ['help', 'commands', 'list'],
+  name: 'uptime',
+  aliases: ['running', 'botuptime', 'botrunng'],
   description: 'Displays the Toxic-MD command menu with interactive buttons',
   run: async (context) => {
     const { client, m, mode, pict, botname, text, prefix } = context;
