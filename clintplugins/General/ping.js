@@ -12,19 +12,19 @@ module.exports = {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Can't read your number, genius! Try again.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
+        return m.reply(`Can't read your number, genius! Try again.`);
       }
 
       // Validate toxicspeed
       if (typeof toxicspeed !== 'number' || isNaN(toxicspeed)) {
         console.error(`Invalid toxicspeed: ${toxicspeed}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`, { mentions: [m.sender] });
+        return m.reply(`Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked`, { mentions: [m.sender] });
       }
 
       // Retrieve settings to get the current prefix
       const settings = await getSettings();
       if (!settings) {
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Error: Couldn't load settings, you dumb fuck.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
+        return m.reply(`Error: Couldn't load settings, you dumb fuck.`);
       }
 
       const toFancyFont = (text, isUpperCase = false) => {
@@ -61,8 +61,8 @@ module.exports = {
       const botName = 'Njabulo-AI';
       const replyText = `*Pong, @${m.pushName}!*
 
-🏓*Response Time*: ${pingTime}ms
-🤖 *Bot Name*: ${toFancyFont(botName)}
+🏓 *Response Time*: ${pingTime}ms
+🍥 *Bot Name*: ${toFancyFont(botName)}
 ⏰ *Uptime*: ${uptimeText}
 🟢 *Status*: Active
 
@@ -84,6 +84,14 @@ I'm running like a damn beast! 😈
                 }
             }
         } });
+
+     // Send the audio as a voice note after the ping message
+      const audioUrl = 'https://files.catbox.moe/4ufunx.mp3';
+      await client.sendMessage(m.chat, {
+        audio: { url: audioUrl },
+        mimetype: 'audio/mp4',
+        ptt: true
+      }, { quoted: m });
 
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
