@@ -12,19 +12,19 @@ module.exports = {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎ `);
+        return m.reply(`erro`);
       }
 
       // Validate toxicspeed
       if (typeof toxicspeed !== 'number' || isNaN(toxicspeed)) {
         console.error(`Invalid toxicspeed: ${toxicspeed}`);
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.`, { mentions: [m.sender] });
+        return m.reply(`Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.`, { mentions: [m.sender] });
       }
 
       // Retrieve settings to get the current prefix
       const settings = await getSettings();
       if (!settings) {
-        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Error: Couldn't load settings, you dumb fuck.`);
+        return m.reply(`Error: Couldn't load settings, you dumb fuck.`);
       }
 
       const toFancyFont = (text, isUpperCase = false) => {
@@ -59,7 +59,7 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
-      const imageUrl = "https://files.catbox.moe/2sol4t.jpeg";
+      const imageUrl = "https://i.imgur.com/bdx9ImP.jpeg";
       const buttons = [
   {
     buttonId:   `${prefix}uptime`,
@@ -73,14 +73,21 @@ module.exports = {
   },
   {
     buttonId:  `${prefix}alive`,
-    buttonText: { displayText: '🏓 Ping' },
+    buttonText: { displayText: '⏰ alive' },
     type: 1
   }
 ];
       
 const buttonMessage = {
   image: { url: imageUrl },
-  caption: `⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*`,
+  caption: `Pong, @${m.pushName}!* 🏓
+
+⏱️ *Response Time*: ${pingTime}ms
+🤖 *Bot Name*: ${toFancyFont(botName)}
+⏰ *Uptime*: ${uptimeText}
+🟢 *Status*: Active
+
+I'm running like a damn beast! 😈`,
   footer: 'Njabulo-AI',
   buttons: buttons,
   headerType: 1
@@ -99,7 +106,7 @@ await client.sendMessage(m.chat, buttonMessage, { quoted: m });
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
       await client.sendMessage(m.chat, {
-        text: `◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`,
+        text: ` Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.`,
         mentions: [m.sender]
       }, { quoted: m });
     }
