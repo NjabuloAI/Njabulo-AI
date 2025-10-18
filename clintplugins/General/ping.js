@@ -39,7 +39,23 @@ module.exports = {
           .map(char => fonts[char] || char)
           .join('');
       };
-        
+
+      let progress = 0;
+      const loadingMessage = await client.sendMessage(m.chat, {
+  text: `🏓 *loading▰▱▱▱▱ 0%*`,
+}, { quoted: m });
+
+     const loadingInterval = setInterval(async () => {
+  progress++;
+  if (progress <= 5) {
+    await client.editMessage(m.chat, loadingMessage.key, {
+      text: `🏓 *loading${"▰".repeat(progress)}${"▱".repeat(5 - progress)} ${progress * 20}%*`,
+    });
+  } else {
+    clearInterval(loadingInterval);
+  }
+}, 500);
+      
       // Uptime
       const formatUptime = (seconds) => {
         const days = Math.floor(seconds / (3600 * 24));
@@ -60,19 +76,6 @@ module.exports = {
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
       const imageUrl = "https://files.catbox.moe/2sol4t.jpeg";
-      
-      const loadingMessage = await client.sendMessage(m.chat, {
-      text: `🏓 *loading▰▰▰▰▰▱ 0%*`,
-    }, { quoted: m });
-
-    let progress = 0;
-    const loadingInterval = setInterval(async () => {
-      progress++;
-      if (progress <= 5) {
-        await client.editMessage(m.chat, loadingMessage.key, {
-          text: `🏓 *loading${"▰".repeat(progress)}${"▱".repeat(5 - progress)} ${progress * 20}%*`,
-        });
-        
       const buttons = [
   {
     buttonId: 'status',
