@@ -59,7 +59,7 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
-      const njabuloai = 'https://i.imgur.com/4gu0YP0.jpeg',
+      const njabuloai = "https://i.imgur.com/4gu0YP0.jpeg",
       const buttons = [
   {
     buttonId: 'status',
