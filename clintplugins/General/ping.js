@@ -44,8 +44,6 @@ module.exports = {
     const totalBlocks = 10;
     const totalPercentage = 100;
 
-    const loadingMessage = await client.sendMessage(m.chat, { text: `Loading... ${"▱".repeat(totalBlocks)} 0%` }, { quoted: m });
-
     for (let i = 0; i <= totalBlocks; i++) {
       const percentage = Math.floor(i * totalPercentage / totalBlocks);
       const loadingProgress = `${"▰".repeat(i)}${"▱".repeat(totalBlocks - i)}`;
