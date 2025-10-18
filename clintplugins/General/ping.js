@@ -62,22 +62,41 @@ module.exports = {
       const imageUrl = "https://files.catbox.moe/eylfig.jpg";
         
       const buttons = [
-  {
-    buttonId:   `${prefix}uptime`,
-    buttonText: { displayText: '📊 Status' },
-    type: 1
-  }
-];
-      
-const buttonMessage = {
-  image: { url: imageUrl },
-  caption: `⏱️ 🏓 *sᴛᴀᴛᴜs▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*`,
-  buttons: buttons,
-  headerType: 1
-};
+      {
+        "buttonId":  `${prefix}ping`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ρong" },
+        "type": 1
+      },
+      {
+        "buttonId":  `${prefix}web`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
+        "type": 1
+      }
+    ];
 
-await client.sendMessage(m.chat, buttonMessage, { quoted: m });
+    const message = `╭─「 *ᴍɪɴɪʙᴏᴛ* 」
+╎ • *ᥲᥣιvᥱ*: ${pingTime}!
+╰───────────── *乂*`;
 
+        await client.sendMessage(m.chat, {
+        image: { url: imageUrl },
+        caption: message,
+        footer: '₪',
+        buttons: buttons,
+        headerType: 4
+    }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "NנɐႦυℓσ נႦ₪",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       // Send the audio as a voice note after the ping message
       const audioUrl = 'https://files.catbox.moe/4ufunx.mp3';
       await client.sendMessage(m.chat, {
