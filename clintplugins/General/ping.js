@@ -47,9 +47,9 @@ module.exports = {
     for (let i = 0; i <= totalBlocks; i++) {
       const percentage = Math.floor(i * totalPercentage / totalBlocks);
       const loadingProgress = `${"▰".repeat(i)}${"▱".repeat(totalBlocks - i)}`;
-      await client.editMessage(m.chat, loadingMessage.key, { text: `Loading... ${loadingProgress} ${percentage}%` });
-      await new Promise(resolve => setTimeout(resolve, 500));
-    }
+      }
+
+      await client.editMessage(m.chat, { text: `Loading... ${loadingProgress} ${percentage}%` { quoted: m });
       
       // Uptime
       const formatUptime = (seconds) => {
