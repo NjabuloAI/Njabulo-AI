@@ -6,25 +6,25 @@ module.exports = {
   aliases: ['p'],
   description: 'Checks the bot\'s response time, uptime, and status with a sassy vibe',
   run: async (context) => {
-    const { client, m, pict, prefix, toxicspeed } = context;
+    const { client, m, toxicspeed } = context;
 
     try {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`erro`);
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Can't read your number, genius! Try again.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
       }
 
       // Validate toxicspeed
       if (typeof toxicspeed !== 'number' || isNaN(toxicspeed)) {
         console.error(`Invalid toxicspeed: ${toxicspeed}`);
-        return m.reply(`Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.`, { mentions: [m.sender] });
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's broken, @${m.sender.split('@')[0]}! Speed data's fucked.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`, { mentions: [m.sender] });
       }
 
       // Retrieve settings to get the current prefix
       const settings = await getSettings();
       if (!settings) {
-        return m.reply(`Error: Couldn't load settings, you dumb fuck.`);
+        return m.reply(`◎━━━━━━━━━━━━━━━━◎\n│❒ Error: Couldn't load settings, you dumb fuck.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`);
       }
 
       const toFancyFont = (text, isUpperCase = false) => {
@@ -39,7 +39,7 @@ module.exports = {
           .map(char => fonts[char] || char)
           .join('');
       };
-  
+
       // Uptime
       const formatUptime = (seconds) => {
         const days = Math.floor(seconds / (3600 * 24));
@@ -58,7 +58,7 @@ module.exports = {
       const userNumber = m.sender.split('@')[0];
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
-      const botName = 'Njabulo-AI';
+      const botName = 'Toxic-MD';
       const imageUrl = "https://i.imgur.com/bdx9ImP.jpeg";
         
       const buttons = [
@@ -81,7 +81,7 @@ module.exports = {
       
 const buttonMessage = {
   image: { url: imageUrl },
-  caption: `⏱️ *Response Time*: ${pingTime}ms\n⏰ *Uptime*: ${uptimeText}\n🟢 *Status*: Active\n\nI'm running like a damn beast! 😈`,
+  caption: `⏱️ *Response Time*: ${pingTime}ms`,
   footer: 'Njabulo-AI',
   buttons: buttons,
   headerType: 1
@@ -100,7 +100,7 @@ await client.sendMessage(m.chat, buttonMessage, { quoted: m });
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
       await client.sendMessage(m.chat, {
-        text: ` Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.`,
+        text: `◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`,
         mentions: [m.sender]
       }, { quoted: m });
     }
