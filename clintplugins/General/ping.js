@@ -40,7 +40,7 @@ module.exports = {
           .join('');
       };
     
-  try {
+
     const totalBlocks = 10;
     const totalPercentage = 100;
 
