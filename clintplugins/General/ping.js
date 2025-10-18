@@ -59,15 +59,35 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
-      const replyText = `
+      
+      const buttons = [
+  {
+    buttonId: 'status',
+    buttonText: { displayText: '📊 Status' },
+    type: 1
+  },
+  {
+    buttonId: 'help',
+    buttonText: { displayText: '🤔 Help' },
+    type: 1
+  },
+  {
+    buttonId: 'ping',
+    buttonText: { displayText: '🏓 Ping' },
+    type: 1
+  }
+];
 
+const buttonMessage = {
+  text: `
 ⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*
+`,
+  footer: 'Njabulo-AI',
+  buttons: buttons,
+  headerType: 1
+};
 
-      `;
-
-      await client.sendMessage(m.chat, {
-        text: replyText,
-      }, { quoted: m });
+await client.sendMessage(m.chat, buttonMessage, { quoted: m });
 
       // Send the audio as a voice note after the ping message
       const audioUrl = 'https://files.catbox.moe/4ufunx.mp3';
