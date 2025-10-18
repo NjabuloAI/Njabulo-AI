@@ -42,12 +42,7 @@ module.exports = async (context) => {
       
 const buttonMessage = {
   image: { url: imageUrl },
-  caption: `
-🤖 *Bot Name*: ${botname}
-⏰ *Uptime*: ${uptimeText}
-🟢 *Status*: Active
-
-I'm running like a damn beast! 😈`,
+  caption: `⏰ *Uptime*: ${uptimeText}`,
   footer: 'Njabulo-AI',
   buttons: buttons,
   headerType: 1
