@@ -60,6 +60,15 @@ module.exports = {
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Njabulo-AI';
       const imageUrl = "https://i.imgur.com/bdx9ImP.jpeg";
+      const replyText = `Pong, @${m.pushName}!* 🏓
+
+⏱️ *Response Time*: ${pingTime}ms
+🤖 *Bot Name*: ${toFancyFont(botName)}
+⏰ *Uptime*: ${uptimeText}
+🟢 *Status*: Active
+
+I'm running like a damn beast! 😈`;
+        
       const buttons = [
   {
     buttonId:   `${prefix}uptime`,
@@ -80,14 +89,7 @@ module.exports = {
       
 const buttonMessage = {
   image: { url: imageUrl },
-  caption: `Pong, @${m.pushName}!* 🏓
-
-⏱️ *Response Time*: ${pingTime}ms
-🤖 *Bot Name*: ${toFancyFont(botName)}
-⏰ *Uptime*: ${uptimeText}
-🟢 *Status*: Active
-
-I'm running like a damn beast! 😈`,
+  caption: replyText,
   footer: 'Njabulo-AI',
   buttons: buttons,
   headerType: 1
