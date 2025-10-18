@@ -59,37 +59,43 @@ module.exports = {
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
       const botName = 'Toxic-MD';
+      const replyText = `
+◎━━━━━━━━━━━━━━━━◎
+│❒ *Pong, @${m.pushName}!* 🏓
 
-      const listButton = {
-        text: `◎━━━━━━━━━━━━━━━━◎\n│❒ *Pong, @${m.pushName}!* 🏓\n\n│ ⏱️ *Response Time*: ${pingTime}ms\n│ ⏰ *Uptime*: ${uptimeText}\n│ 🟢 *Status*: Active\n\nI'm running like a damn beast! 😈\n\n> Pσɯҽɾҽԃ Ⴆყ Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`,
-        footer: 'Toxic-MD',
-        mentions: [m.sender],
-        buttonText: "Select an option",
-        sections: [
-          {
-            title: "Toxic-MD Options",
-            rows: [
-              {
-                title: "📊 Bot Stats",
-                description: "Get bot stats",
-                rowId: "bot_stats"
-              },
-              {
-                title: "ℹ️ Help",
-                description: "Get help",
-                rowId: "bot_help"
-              }
-            ]
-          }
-        ]
-      };
+│ ⏱️ *Response Time*: ${pingTime}ms
 
-      if (context.pict) {
-        listButton.headerType = 1;
-        listButton.thumbnail = context.pict;
+│ 🤖 *Bot Name*: ${toFancyFont(botName)}
+
+│ ⏰ *Uptime*: ${uptimeText}
+
+│ 🟢 *Status*: Active
+
+I'm running like a damn beast! 😈
+
+> Pσɯҽɾҽԃ Ⴆყ Toxic-MD
+◎━━━━━━━━━━━━━━━━◎
+      `;
+      
+      await client.sendMessage(m.chat, {
+      text: replyText,
+      footer: `Pσɯҽɾҽԃ Ⴆყ ${botname}`,
+      buttons: [
+        { buttonId: `${prefix}dev`, buttonText: { displayText: `👤 ${toFancyFont('DEV')}` }, type: 1 }
+      ],
+      headerType: 1,
+      viewOnce: true,
+      contextInfo: {
+        externalAdReply: {
+          showAdAttribution: false,
+          title: `${botname}`,
+          body: `Yo! Don’t fuck this up.`,
+          sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+          mediaType: 1,
+          renderLargerThumbnail: true
+        }
       }
-
-      await client.sendMessage(m.chat, listButton);
+    }, { quoted: m });
 
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
