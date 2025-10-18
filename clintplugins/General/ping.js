@@ -41,15 +41,10 @@ module.exports = {
       };
     
 
-    const totalBlocks = 10;
-    const totalPercentage = 100;
 
-    for (let i = 0; i <= totalBlocks; i++) {
-      const percentage = Math.floor(i * totalPercentage / totalBlocks);
-      const loadingProgress = `${"▰".repeat(i)}${"▱".repeat(totalBlocks - i)}`;
-      }
-
-      await client.editMessage(m.chat, { text: `Loading... ${loadingProgress} ${percentage}%`}, { quoted: m });
+        await client.sendMessage(m.chat, { 
+        text: `*General by Njabulo AI pong*`,
+          }, { quoted: m });
       
       
       // Uptime
