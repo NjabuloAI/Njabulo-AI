@@ -58,28 +58,32 @@ module.exports = {
       const userNumber = m.sender.split('@')[0];
       const pingTime = toxicspeed.toFixed(4);
       const uptimeText = formatUptime(process.uptime());
-      const botName = 'Toxic-MD';
-      const replyText = `
-◎━━━━━━━━━━━━━━━━◎
-│❒ *Pong, @${m.pushName}!* 🏓
+      const botName = 'Njabulo-AI';
+      const replyText = `*Pong, @${m.pushName}!*
 
-│ ⏱️ *Response Time*: ${pingTime}ms
-
-│ 🤖 *Bot Name*: ${toFancyFont(botName)}
-
-│ ⏰ *Uptime*: ${uptimeText}
-
-│ 🟢 *Status*: Active
+🏓*Response Time*: ${pingTime}ms
+🤖 *Bot Name*: ${toFancyFont(botName)}
+⏰ *Uptime*: ${uptimeText}
+🟢 *Status*: Active
 
 I'm running like a damn beast! 😈
-
-> Pσɯҽɾҽԃ Ⴆყ Toxic-MD
-◎━━━━━━━━━━━━━━━━◎
       `;
       
       await client.sendMessage(m.chat, {
       text: replyText,
-    }, { quoted: m });
+         }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
