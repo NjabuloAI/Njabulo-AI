@@ -14,7 +14,7 @@ module.exports = {
       await client.sendMessage(
         m.chat,
         {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo ${m.pushName}, what's with the extra bullshit? Just say *${prefix}menu*, moron. 🖕\n┗━━━━━━━━━━━━━━━┛`,
+          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo ${m.pushName}, what's with the extra bullshit? Just say *${prefix}uptime*, moron. 🖕\n┗━━━━━━━━━━━━━━━┛`,
         },
         { quoted: m, ad: true }
       );
