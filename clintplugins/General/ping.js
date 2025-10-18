@@ -71,6 +71,7 @@ I'm running like a damn beast! 😈
       
       await client.sendMessage(m.chat, {
       text: replyText,
+      mentions: [m.sender]
          }, { quoted: {
             key: {
                 fromMe: false,
@@ -96,7 +97,7 @@ I'm running like a damn beast! 😈
     } catch (error) {
       console.error(`Ping command fucked up: ${error.stack}`);
       await client.sendMessage(m.chat, {
-        text: `◎━━━━━━━━━━━━━━━━◎\n│❒ Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.\nCheck https://github.com/xhclintohn/Toxic-MD\n◎━━━━━━━━━━━━━━━━◎`,
+        text: `Ping's fucked, @${m.sender.split('@')[0]}! Try again, you slacker.`,
         mentions: [m.sender]
       }, { quoted: m });
     }
