@@ -79,9 +79,8 @@ module.exports = {
 ];
 
 const buttonMessage = {
-  text: `
-⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*
-`,
+  audio: { url: pict },
+  caption: `⏰ *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${pingTime}ᴍs*`,
   footer: 'Njabulo-AI',
   buttons: buttons,
   headerType: 1
