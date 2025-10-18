@@ -49,7 +49,8 @@ module.exports = {
       const loadingProgress = `${"▰".repeat(i)}${"▱".repeat(totalBlocks - i)}`;
       }
 
-      await client.editMessage(m.chat, { text: `Loading... ${loadingProgress} ${percentage}%` { quoted: m });
+      await client.editMessage(m.chat, { text: `Loading... ${loadingProgress} ${percentage}%`}, { quoted: m });
+      
       
       // Uptime
       const formatUptime = (seconds) => {
