@@ -9,7 +9,7 @@ if (!fs.existsSync(tempDir)) {
 }
 
 module.exports = async (context) => {
-  const { client, m, pict, text } = context;
+  const { client, m, prefix, pict, text } = context;
 
   const formatStylishReply = (message) => {
     return `${message}\n> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
@@ -43,6 +43,18 @@ module.exports = async (context) => {
       );
     }
 
+    const buttons = [
+        {
+          "buttonId": `${prefix}img`,
+          "buttonText": { "displayText": "🎸audio" },
+          "type": 1
+        },
+        {
+          "buttonId": `${prefix}image`,
+          "buttonText": { "displayText": "📄document" },
+          "type": 1
+        },
+      ];
     const videoInfo = `*🍥General by Njabulo AI*\n\n`+
                       `🎧 *Title:* ${video.title}\n` +
                       `👀 *Views:* ${video.views}\n` +
@@ -55,6 +67,8 @@ module.exports = async (context) => {
       {
         image: { url: video.thumbnail },
         caption: videoInfo,
+        buttons: buttons,
+        headerType: 4,
         contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
