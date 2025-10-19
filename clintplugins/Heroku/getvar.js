@@ -9,7 +9,7 @@ module.exports = async (context) => {
         const { client, m, text, Owner, prefix } = context;
 
         if (!herokuAppName || !herokuApiKey) {
-            await m.reply("It looks like the Heroku app name or API key is not set. Please make sure you have set the `HEROKU_APP_NAME` and `HEROKU_API_KEY` environment variables.");
+            await m.reply("It looks like the Heroku app name or API key is not set. Please make sure you have set the. `HEROKU_APP_NAME` and `HEROKU_API_KEY` environment variables.");
             return;
         }
 
