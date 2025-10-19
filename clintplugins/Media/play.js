@@ -51,7 +51,7 @@ module.exports = async (context) => {
         },
         {
           "buttonId": `${prefix}yts ${text}`,
-          "buttonText": { "displayText": "🎼Yts url" },
+          "buttonText": { "displayText": "🎼Yts" },
           "type": 1
         },
         {
@@ -75,16 +75,24 @@ module.exports = async (context) => {
     await client.sendMessage(
       m.chat,
       {
-        image: { url: video.thumbnail },
-        caption: videoInfo,
-        buttons: buttons,
+    image: { url: video.thumbnail },
+     caption: videoInfo,
+     buttons: buttons,
         headerType: 4,
-        contextInfo: {
-         isForwarded: true,
+      contextInfo: {
+      isForwarded: true,
          forwardedNewsletterMessageInfo: {
          newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo AI🍥",
+         newsletterName: "╭••➤Njabulo AI🍥",
          serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+        externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: false,
         }
       }
       },
@@ -158,3 +166,4 @@ module.exports = async (context) => {
     );
   }
 };
+  
