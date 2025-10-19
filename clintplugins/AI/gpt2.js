@@ -1,5 +1,3 @@
-//gpt2.js
-
 module.exports = async (context) => {
     const { client, m, text, fetchJson } = context;
 
@@ -19,6 +17,6 @@ module.exports = async (context) => {
 
     } catch (e) {
         console.log(e);
-        m.reply("An error occurred while processing your request.");
+        m.reply("Ready to fuck shit up? *Njabulo AI* Yo An error occurred while processing your request.");
     }
 };

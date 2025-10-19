@@ -28,7 +28,7 @@ module.exports = async (context) => {
             m.chat,
             {
                 image: { url: data.msg },
-                caption: `*🍥General by Njabulo AI*`
+                caption: `> ρσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`
             },
             { quoted: m }
         );

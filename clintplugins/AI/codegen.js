@@ -1,5 +1,3 @@
-//codegen.js
-
 const axios = require("axios");
 
 module.exports = async (context) => {
@@ -39,6 +37,6 @@ module.exports = async (context) => {
 
     } catch (error) {
         console.error(error);
-        m.reply("An error occurred while processing your request.");
+        m.reply("Njabulo AI An error occurred while processing your request..");
     }
 };

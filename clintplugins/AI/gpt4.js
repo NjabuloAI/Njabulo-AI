@@ -1,11 +1,9 @@
-//gpt4.js
-
 module.exports = async (context) => {
     const { client, m, text } = context;
 
 
 const ai = require('unlimited-ai');
-if (!text) return m.reply("provide text");
+if (!text) return m.reply("Ready to fuck shit up? *Njabulo AI* Yo provide text to");
 
  (async () => { 
 

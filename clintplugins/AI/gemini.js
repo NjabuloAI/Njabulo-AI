@@ -3,7 +3,7 @@ module.exports = async (context) => {
   const axios = require("axios");
 
   const formatStylishReply = (message) => {
-    return `${message}\n`;
+    return `Ready to fuck shit up? *➥ sir Njabulo AIメ* ${message}`;
   };
 
   // Check if text is provided
@@ -51,7 +51,7 @@ module.exports = async (context) => {
     console.error("Gemini command error:", error);
     return client.sendMessage(
       m.chat,
-      { text: formatStylishReply(`Yo, something broke: ${error.message}. Try another query! 😎`) },
+      { text: formatStylishReply(`Ready to fuck shit up? *Njabulo AI* Yo. something broke: ${error.message}. Try another query! 😎`) },
       { quoted: m, ad: true }
     );
   }

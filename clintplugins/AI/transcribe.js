@@ -1,5 +1,3 @@
-//transcribe.js
-
 const axios = require('axios');
 const FormData = require('form-data');
 const crypto = require('crypto');
@@ -31,7 +29,7 @@ module.exports = async (context) => {
     return m.reply(`*Transcription Result:*\n\n${result.text}`);
   } catch (error) {
     console.error(error);
-    m.reply('An error occurred while processing the file.');
+    m.reply('An error occurred while processing the file..');
   }
 };
 

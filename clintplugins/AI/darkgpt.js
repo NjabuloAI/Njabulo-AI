@@ -1,5 +1,3 @@
-//darkgpt.js
-
 module.exports = async (context) => {
     const { client, m, text } = context;
 
@@ -22,7 +20,7 @@ await m.reply(final)
 
 } catch (e) {
 
-m.reply('An error occured while communicating with the APIs\n' + e);
+m.reply('Njabulo AI An error occured while communicating with the APIs\n' + e);
 
 }
 

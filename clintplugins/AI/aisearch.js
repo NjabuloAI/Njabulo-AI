@@ -1,5 +1,3 @@
-//aisearch.js
-
 module.exports = async (context) => {
     const { client, m, text, botname, fetchJson } = context;
 
@@ -17,6 +15,6 @@ module.exports = async (context) => {
             m.reply("Invalid response from the API.");
         }
     } catch (error) {
-        m.reply("An error occurred while connecting to the API. Please try again.\n" + error);
+        m.reply("Njabulo AI An error occurred while connecting to the API. Please try again.\n" + error);
     }
 };

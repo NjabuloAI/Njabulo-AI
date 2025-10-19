@@ -1,5 +1,3 @@
-//groq.js
-
 module.exports = async (context) => {
     const { client, m, text } = context;
 
@@ -36,6 +34,6 @@ module.exports = async (context) => {
 
     } catch (error) {
         console.error("Error:", error);
-        m.reply("An error occurred.\n" + error);
+        m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* Yo An error occurred.\n" + error);
     }
 };

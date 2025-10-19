@@ -1,5 +1,3 @@
-//chat.js
-
 const { saveConversation, getRecentMessages } = require('../../Database/config');
 const { deleteUserHistory } = require('../../Database/config'); 
 
@@ -31,6 +29,6 @@ module.exports = async (context) => {
 
     } catch (error) {
         console.error(error);
-        m.reply("Something went wrong...\n\n" + error.message);
+        m.reply("Njabulo AI Something went wrong...\n\n" + error.message);
     }
 };

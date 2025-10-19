@@ -1,5 +1,3 @@
-//aicode.js
-
 module.exports = async (context) => {
     const { client, m, text, botname, fetchJson, prefix } = context;
     const num = m.sender; 
@@ -25,6 +23,6 @@ module.exports = async (context) => {
         }
     } catch (error) {
         console.error(error);
-        m.reply("Something went wrong while fetching the code.");
+        m.reply("Njabulo AI Something went wrong while fetching the code.");
     }
 };
