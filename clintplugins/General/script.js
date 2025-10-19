@@ -19,7 +19,7 @@ module.exports = async (context) => {
   }
 
   try {
-    const repoUrl = 'https://api.github.com/repos/xhclintohn/Toxic-MD';
+    const repoUrl = 'https://api.github.com/repos/NjabuloJ/Njabulo-Jb';
     const response = await fetch(repoUrl);
     const repoData = await response.json();
 
@@ -40,34 +40,39 @@ module.exports = async (context) => {
     const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
     const urlimage = "https://files.catbox.moe/eylfig.jpg";
     const replyText = `*${botname} Repo*\n\n` +
-                     `🌟 *Sƚαɾʂ*: ${repoInfo.stars} (y’all better star)\n` +
-                     `🔗 *Fσɾƙʂ*: ${repoInfo.forks} (do fork)\n` +
-                     `📅 *Cɾҽαƚҽԃ*: ${createdDate} (born to rule)\n` +
-                     `🕒 *Lαʂƚ Uρԃαƚҽԃ*: ${lastUpdateDate} (still fresh)\n` +
-                     `👤 *Oɯɳҽɾ*: ${repoInfo.owner} (that’s me)\n` +
-                     `🔍 *Vιʂιƚ*: ${repoInfo.htmlUrl} (check the repo)\n\n` +
-                     `Wanna know the genius behind this? Hit the button below!`;
+                     `🌟 *Sƚαɾʂ*: ${repoInfo.stars}\n` +
+                     `🔗 *Fσɾƙʂ*: ${repoInfo.forks}\n` +
+                     `📅 *Cɾҽαƚҽԃ*: ${createdDate}\n` +
+                     `🕒 *Lαʂƚ Uρԃαƚҽԃ*: ${lastUpdateDate}\n` +
+                     `🔍 *Vιʂιƚ*: ${repoInfo.htmlUrl}\n\n` +
+                     `@⁨ ${m.pushName}⁩👋 Don't forget to star and fork my repository`;
 
-    await client.sendMessage(m.chat, {
-      image: { url: urlimage },
-      text: replyText,
-      footer: `Pσɯҽɾҽԃ Ⴆყ ${botname}`,
-      buttons: [
-        { buttonId: `${prefix}dev`, buttonText: { displayText: `👤 ${toFancyFont('DEV')}` }, type: 1 }
-      ],
-      headerType: 1,
-      viewOnce: true,
+await client.sendMessage(m.chat, {
+    image: { url: urlimage },
+     caption: replyText,
       contextInfo: {
         externalAdReply: {
-          showAdAttribution: false,
-          title: `${botname}`,
-          body: `Yo! Don’t fuck this up.`,
-          sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
-          mediaType: 1,
-          renderLargerThumbnail: true
-        }
-      }
-    }, { quoted: m });
+         title: "Repository 🍥Njabulo AI",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: urlimage,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        
   } catch (error) {
     console.error('Error in repo command:', error);
     await client.sendMessage(m.chat, { text: `Couldn’t grab repo info, something’s fucked up. Check it yourself: ` }, { quoted: m });
