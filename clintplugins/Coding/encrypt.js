@@ -22,6 +22,6 @@ module.exports = async (context) => {
         console.log("Successfully encrypted the code");
         m.reply(obfuscationResult.getObfuscatedCode());
     } else {
-        m.reply("Tag a valid JavaScript code to encrypt!");
+        m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* \n🥺 please Tag a valid JavaScript code to encrypt!");
     }
 };

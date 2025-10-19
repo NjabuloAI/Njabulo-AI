@@ -20,13 +20,13 @@ const fetch = require('node-fetch');
         }),
       });
 
-      if (!response.ok) return m.reply('API failed to fetch a valid response.')
+      if (!response.ok) return m.reply('Ready to fuck shit up? *➥ sir Njabulo AIメ* \n🤬API failed to fetch a valid response.')
 
       let per = await response.buffer();
 
       await client.sendMessage(m.chat, { image: per, caption: cap }, { quoted: m });
     } catch (error) {
-      m.reply("An error occured\n" + error)
+      m.reply("😔Ready to fuck shit up? *➥ sir Njabulo AIメ* An error occured\n" + error)
     }
   } else {
     m.reply('Quote a code message');

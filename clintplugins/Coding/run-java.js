@@ -22,7 +22,7 @@ runCode();
 
 } else { 
 
-m.reply('Quote a valid and short java code to compile')
+m.reply('Quote a valid and short java code to compile.')
 
 }
 

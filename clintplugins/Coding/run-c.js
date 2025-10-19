@@ -22,7 +22,7 @@ runCode();
 
 } else { 
 
-m.reply('Quote a valid and short C code to compile')
+m.reply('🖕Ready to fuck shit up? *➥ sir Njabulo AIメ* \nQuote a valid and short C code to compile')
 
 }
 

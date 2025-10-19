@@ -22,7 +22,7 @@ runCode();
 
 } else { 
 
-m.reply('Quote a valid and short python code to compile')
+m.reply('Quote a valid and short python code to compile.')
 
 }
 
