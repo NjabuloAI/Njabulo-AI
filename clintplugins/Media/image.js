@@ -49,17 +49,17 @@ module.exports = async (context) => {
     const imagesToSend = allImages.slice(0, MAX_SEND);
     const buttons = [
         {
-          "buttonId": `${prefix}img night romance`,
+          "buttonId": `${prefix}img`,
           "buttonText": { "displayText": "🌠night image" },
           "type": 1
         },
         {
-          buttonId": `${prefix}img rose beautiful`,
+          buttonId": `${prefix}img`,
           "buttonText": { "displayText": "🥀rose image" },
           "type": 1
         },
-      {
-          "buttonId": `${prefix}image beautiful love`,
+        {
+          "buttonId": `${prefix}image`,
           "buttonText": { "displayText": "🖼️love image" },
           "type": 1
         },
