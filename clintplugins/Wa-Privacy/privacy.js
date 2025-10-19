@@ -26,7 +26,7 @@ const Myself = await client.decodeJid(client.user.id);
 * Read receipt : ${readreceipts}
 * Group add : ${groupadd}
 * Status : ${status}
-* Call add : ${calladd}`;
+* Calll add : ${calladd}`;
 
 
 const avatar = await client.profilePictureUrl(Myself, 'image').catch(_ => 'https://telegra.ph/file/b34645ca1e3a34f1b3978.jpg');
