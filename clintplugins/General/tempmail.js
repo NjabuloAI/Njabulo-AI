@@ -1,4 +1,4 @@
-//tempmails.js
+//tempmail.js
 
 module.exports = async (context) => {
         const { client, m } = context;
@@ -19,7 +19,7 @@ const mas = await client.sendMessage(m.chat, { text: `${inbox.token}` });
 
 
       
-await client.sendMessage(m.chat, { text: `Quoted text is your token. To fetch messages in your email use <.tempinbox your-token>`}, { quoted: mas});
+await client.sendMessage(m.chat, { text: `Quoted my text is your token. To fetch messages in your email use <.tempinbox your-token>`}, { quoted: mas});
 
 
 

@@ -12,7 +12,7 @@ module.exports = async (context) => {
     console.log(`✅ Fetched weather data for ${text}`);
 
     if (data.cod !== 200) {
-      return m.reply(` What the hell? Can’t find ${text}. Pick a real place, idiot.`);
+      return m.reply(`What the hell? Can’t find ${text}. Pick a real place, idiot.`);
     }
 
     const cityName = data.name;
@@ -28,29 +28,19 @@ module.exports = async (context) => {
     const sunrise = new Date(data.sys.sunrise * 1000);
     const sunset = new Date(data.sys.sunset * 1000);
 
-    await m.reply(`◈━━━━━━━━━━━━━━━━◈
-│❒ Weather in *${cityName}* 🌎
-├──────────────┤
-│❒ 🌡️ Temp: ${temperature}°C
-├──────────────┤
-│❒ 🥵 Feels Like: ${feelsLike}°C
-├──────────────┤
-│❒ 📝 Conditions: ${description}
-├──────────────┤
-│❒ 💧 Humidity: ${humidity}%
-├──────────────┤
-│❒ 🌀 Wind: ${windSpeed} m/s
-├──────────────┤
-│❒ 🌧️ Rain (1h): ${rainVolume} mm
-├──────────────┤
-│❒ ☁️ Clouds: ${cloudiness}%
-├──────────────┤
-│❒ 🌄 Sunrise: ${sunrise.toLocaleTimeString()}
-├──────────────┤
-│❒ 🌅 Sunset: ${sunset.toLocaleTimeString()}
-◈━━━━━━━━━━━━━━━━◈`);
+    await m.reply(`Weather in *${cityName}* 🌎
+🌡️ Temp: ${temperature}°C
+🥵 Feels Like: ${feelsLike}°C
+📝 Conditions: ${description}
+💧 Humidity: ${humidity}%
+🌀 Wind: ${windSpeed} m/s
+🌧️ Rain (1h): ${rainVolume} mm
+☁️ Clouds: ${cloudiness}%
+🌄 Sunrise: ${sunrise.toLocaleTimeString()}
+🌅 Sunset: ${sunset.toLocaleTimeString()}
+`);
   } catch (e) {
     console.error(`❌ Error fetching weather for ${text}: ${e.message}`);
-    await m.reply(` Ugh, something broke, or ${text} ain’t a real place. Try again, moron.`);
+    await m.reply(`Ready to fuck shit up? *➥ sir Njabulo AIメ* Ugh, something broke, or ${text} ain’t a real place. Try again, moron.`);
   }
 };

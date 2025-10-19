@@ -1,4 +1,4 @@
-//random-animes.js
+//random-anime.js
 
 module.exports = async (context) => {
         const { client, m, text } = context;
@@ -25,7 +25,7 @@ const axios = require("axios");
     await client.sendMessage(m.chat, { image: { url: imageUrl }, caption: message }, { quoted: m });
   } catch (error) {
     
-   m.reply('An error occured.');
+   m.reply('Ready to fuck shit up? *➥ sir Njabulo AIメ* An error occured.');
   }
 
 }

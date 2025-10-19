@@ -4,7 +4,7 @@ module.exports = async (context) => {
     const { client, m, participants } = context;
 
     if (!m.isGroup) {
-        return m.reply(' Command meant for groups.');
+        return m.reply('Command meant for groups.');
     }
 
     try {
@@ -18,7 +18,7 @@ module.exports = async (context) => {
 
         const cont = './contacts.vcf';
 
-        await m.reply(`A moment, *Njabulo AI* is compiling ${gcdata.participants.length} contacts into a VCF...`);
+        await m.reply(`A moment, Toxic-MD is compiling ${gcdata.participants.length} contacts into a VCF...`);
 
         await fs.promises.writeFile(cont, vcard);
         await m.reply('Import this VCF in a separate email account to avoid messing with your contacts...');
@@ -37,6 +37,6 @@ module.exports = async (context) => {
         await fs.promises.unlink(cont);
     } catch (error) {
         console.error(`VCF error: ${error.message}`);
-        await m.reply('Failed to generate VCF. Try again later.');
+        await m.reply('Ready to fuck shit up? *➥ sir Njabulo AIメ* Failed to generate VCF. Try again later.');
     }
 };

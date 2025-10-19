@@ -1,4 +1,3 @@
-//button 
 const { default: makeWASocket } = require('@whiskeysockets/baileys');
 
 module.exports = {
@@ -11,7 +10,7 @@ module.exports = {
     try {
       await client.sendMessage(m.chat, {
         text: 'Choose an option from the list:',
-        footer: 'Toxic-MD Bot',
+        footer: '➥ sir Njabulo AIメ Bot',
         sections: [
           {
             title: 'General Commands',

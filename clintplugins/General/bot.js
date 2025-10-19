@@ -52,7 +52,7 @@ module.exports = async (context) => {
     const repoText = `Hit the button below to view repo, ${m.pushName}! 😈`;
     await client.sendMessage(m.chat, {
       text: repoText,
-      footer: `TPσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ JႦ`,
+      footer: `General by ➥ sir Njabulo AIメ`,
       buttons: [
         { buttonId: `${prefix}repo`, buttonText: { displayText: `📖 ${toFancyFont('REPO')}` }, type: 1 }
       ],

@@ -19,7 +19,7 @@ module.exports = async (context) => {
   }
 
   try {
-    const replyText = `*Credits, Bitches*\n\nAll hail *Njabulo AI*, the badass who built this bot from the ground up. Nobody else gets credit—fuck ‘em. This is my empire, and I run this shit solo.\n\nBow down to *Njabulo AI* 🫡`;
+    const replyText = `*Credits, Bitches*\n\nAll hail *➥ sir Njabulo AIメ*, the badass who built this bot from the ground up. Nobody else gets credit—fuck ‘em. This is my empire, and I run this shit solo.\n\nBow down to *➥ sir Njabulo AIメ* 🫡`;
 
     await client.sendMessage(m.chat, {
       text: replyText,

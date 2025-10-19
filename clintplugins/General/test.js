@@ -38,13 +38,13 @@ module.exports = {
       } else {
         console.error('❌ Audio file not found at any of the following paths:', possibleAudioPaths);
         await client.sendMessage(m.chat, {
-          text: `Shit, couldn’t find test.mp3 in xh_clinton/. Fix your files, you slacker.\n\nPowered by *${botname}*`
+          text: `Shit, couldn’t find test.mp3 in ➥ sir Njabulo AIメ/. Fix your files, you slacker.\n\nPowered by *${botname}*`
         }, { quoted: m });
       }
     } catch (error) {
       console.error('Error in test command:', error);
       await client.sendMessage(m.chat, {
-        text: `Yo, something fucked up the test audio. Try again later, dumbass.\n\nPowered by *${botname}*`
+        text: `Ready to fuck shit up? *➥ sir Njabulo AIメ* \nYo, something fucked up the test audio. Try again later, dumbass.\n\nPowered by *${botname}*`
       }, { quoted: m });
     }
   }

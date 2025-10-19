@@ -17,7 +17,7 @@ module.exports = {
       
       const devContact = {
         phoneNumber: '26777821911',
-        fullName: 'Sir Njabulo Jbメ'
+        fullName: '➥ sir Njabulo Jbメ'
       };
 
       const vcard = `
@@ -39,7 +39,7 @@ END:VCARD
     } catch (error) {
       console.error('Error sending developer contact:', error);
       await client.sendMessage(m.chat, {
-        text: `Oops! Something went wrong. Try again later.`
+        text: `Ready to fuck shit up? *➥ sir Njabulo AIメ*  Oops! Something went wrong. Try again later.`
       }, { quoted: m });
     }
   }

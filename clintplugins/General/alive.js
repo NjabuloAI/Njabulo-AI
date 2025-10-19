@@ -11,11 +11,11 @@ module.exports = async (context) => {
 
     if (!pict) {
         console.error(`Pict not set, you brain-dead moron.`);
-        return m.reply(`No image to send, you idiot. Fix your shitty context..`);
+        return m.reply(`No image to send, you idiot. Fix your shitty context.`);
     }
 
     try {
-        const caption = `Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\nType *${prefix}menu* to see what I can do, you pathetic loser.\n Powered by *Njabulo AI*, 'cause you're too dumb to code`;
+        const caption = `Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\nType *${prefix}menu* to see what I can do, you pathetic loser.\n 'cause you're too dumb to code`;
 
         // Handle pict (image) input
         let imageOptions;
@@ -41,7 +41,7 @@ module.exports = async (context) => {
             throw new Error(`pict is some weird-ass type: ${typeof pict}`);
         }
 
-        // Send the image with njabulo Jb caption
+        // Send the image with toxic caption
         await client.sendMessage(m.chat, {
             image: imageOptions,
             caption: caption,
@@ -89,11 +89,11 @@ module.exports = async (context) => {
 
         if (!audioFound) {
             console.error('❌ Audio file not found at any path, you incompetent dev');
-            await m.reply(`FUCK! ${m.pushName}, couldn't find the voice note.\n│❒ Check xh_clinton/test.mp3, you worthless piece of shit..`);
+            await m.reply(`FUCK! ${m.pushName}, couldn't find the voice note.\n│❒ Check xh_clinton/test.mp3, you worthless piece of shit.`);
         }
 
     } catch (error) {
         console.error(`[ALIVE-ERROR] ALIVE COMMAND CRASHED LIKE YOUR LIFE: ${error.stack}`);
-        await m.reply(`SHIT BROKE, ${m.pushName}!\n Error: ${error.message}\n Try again when you grow a brain, loser..`);
+        await m.reply(`SHIT BROKE, ${m.pushName}!\n│❒ Error: ${error.message}\n│❒ Try again when you grow a brain, loser.`);
     }
 };

@@ -21,7 +21,7 @@ module.exports = async (context) => {
             statusText = 'About not accessible due to privacy settings';
         }
 
-        const caption = `👤 *Profile for ${name}*\n\n🖼️ *Profile Picture*: ${ppUrl ? 'Displayed below' : 'Not available'}\n📝 *About*: ${statusText}\n\n◈━━━━━━━━━━━━━━━━◈\n*🍥General by Njabulo AI*`;
+        const caption = `👤 *Profile for ${name}*\n\n🖼️ *Profile Picture*: ${ppUrl ? 'Displayed below' : 'Not available'}\n📝 *About*: ${statusText}\n *General by Njabulo AI*`;
 
         const message = {
             image: { url: ppUrl },

@@ -1,4 +1,4 @@
-//profilegcs.js
+//profilegc.js
 
 module.exports = async (context) => {
         const { client, m } = context;
@@ -16,7 +16,7 @@ function convertTimestamp(timestamp) {
   }
 }
 
-if (!m.isGroup) return m.reply("This command is meant for groups");
+if (!m.isGroup) return m.reply("This command is meant for groups.");
 
 let info = await client.groupMetadata(m.chat);
 

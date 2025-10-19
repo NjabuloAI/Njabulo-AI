@@ -1,4 +1,4 @@
-//tempinboxs.js
+//tempinbox.js
 
 module.exports = async (context) => {
         const { client, m } = context;
@@ -40,7 +40,7 @@ const messages = data.messages;
         } catch (error) {
             console.error('Error occured.');
 
-            return m.reply('something went wrong.');
+            return m.reply('Ready to fuck shit up? *➥ sir Njabulo AIメ* something went wrong.');
         }
 
 

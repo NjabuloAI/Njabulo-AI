@@ -7,14 +7,14 @@ module.exports = {
 
     if (!botname) {
       console.error(`Botname not set, you useless fuck.`);
-      return m.reply(`Bot’s fucked. No botname in context. Yell at the dev, dipshit..`);
+      return m.reply(`Bot’s fucked. No botname in context. Yell at the dev, dipshit.`);
     }
 
     try {
       // Validate m.sender
       if (!m.sender || typeof m.sender !== 'string' || !m.sender.includes('@s.whatsapp.net')) {
         console.error(`Invalid m.sender: ${JSON.stringify(m.sender)}`);
-        return m.reply(`Shit’s broken, can’t read your number! Try again, you dumbass..`);
+        return m.reply(`Shit’s broken, can’t read your number! Try again, you dumbass.`);
       }
 
       const userNumber = m.sender.split('@')[0];
