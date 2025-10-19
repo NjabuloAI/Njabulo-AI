@@ -45,12 +45,12 @@ module.exports = async (context) => {
 
     const buttons = [
         {
-          "buttonId": `${prefix}img`,
+          "buttonId": `${prefix}img ${text}`,
           "buttonText": { "displayText": "🎸audio" },
           "type": 1
         },
         {
-          "buttonId": `${prefix}image`,
+          "buttonId": `${prefix}image ${text}`,
           "buttonText": { "displayText": "📄document" },
           "type": 1
         },
