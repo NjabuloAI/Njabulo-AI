@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports = async (context) => {
-  const { client, m, text } = context;
+  const { client, m, prefix, text } = context;
 
   const formatStylishReply = (message) => {
     return `${message}\n*🍥General by sir Njabulo AI*`;
