@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-console.log(`🔄 Initializing database connection...`);
+console.log(`🔄 Initializing database connection....`);
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
