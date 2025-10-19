@@ -15,7 +15,7 @@ module.exports = async (context) => {
     }
 
     try {
-        const caption = `Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\nType *${prefix}menu* to see what I can do, you pathetic loser.\n 'cause you're too dumb to code`;
+        const caption = `Yo ${m.pushName}, *${botname}* is alive and ready to fuck shit up! 🖕\nclink button  to see what I can do, you pathetic loser.\n 'cause you're too dumb to code`;
 
         // Handle pict (image) input
         let imageOptions;
@@ -41,11 +41,24 @@ module.exports = async (context) => {
             throw new Error(`pict is some weird-ass type: ${typeof pict}`);
         }
 
+        const buttons = [
+      {
+        "buttonId":  `${prefix}ping`,
+        "buttonText": { "displayText": "⏰ping" },
+        "type": 1
+      },
+      {
+        "buttonId":  `${prefix}uptime`,
+        "buttonText": { "displayText": "⏱️uptime" },
+        "type": 1
+      }
+    ];
         // Send the image with toxic caption
         await client.sendMessage(m.chat, {
             image: imageOptions,
             caption: caption,
-            mentions: [m.sender]
+            buttons: buttons,
+            headerType: 4
         }, { quoted: m });
 
         // Clean up temp image if created
