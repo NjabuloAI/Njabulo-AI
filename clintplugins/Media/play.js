@@ -46,22 +46,27 @@ module.exports = async (context) => {
     const buttons = [
         {
           "buttonId": `${prefix}lyrics ${text}`,
-          "buttonText": { "displayText": "🎻Lyrics" },
+          "buttonText": { "displayText": "🎻⇆ㅤLyrics ↻" },
           "type": 1
         },
         {
           "buttonId": `${prefix}yts ${text}`,
-          "buttonText": { "displayText": "🎼Yts" },
-          "type": 1
-        },
-        {
-          "buttonId": `${prefix}video ${text}`,
-          "buttonText": { "displayText": "🎥Video" },
+          "buttonText": { "displayText": "🎼⇆ㅤYts ↻" },
           "type": 1
         },
       {
           "buttonId": `${prefix}image ${text}`,
-          "buttonText": { "displayText": "🖼️Image" },
+          "buttonText": { "displayText": "🖼️⇆ㅤImage ↻" },
+          "type": 1
+         },
+      {
+          "buttonId": `${prefix}image ${text}`,
+          "buttonText": { "displayText": "📄⇆ㅤSongs ↻" },
+          "type": 1
+        },
+        {
+          "buttonId": `${prefix}video ${text}`,
+          "buttonText": { "displayText": "🎥⇆ㅤVideo ↻" },
           "type": 1
         },
       ];
