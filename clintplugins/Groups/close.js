@@ -5,6 +5,6 @@ module.exports = async (context) => {
         const { client, m } = context;
 
         await client.groupSettingUpdate(m.chat, 'announcement');
-                m.reply('◈━━━━━━━━━━━━━━━━◈\n❒ Group closed.\n◈━━━━━━━━━━━━━━━━◈');
+                m.reply('Ready to fuck shit up? *➥ sir Njabulo AIメ* Group closed.');
     });
 };

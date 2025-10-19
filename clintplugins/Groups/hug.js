@@ -1,7 +1,7 @@
 module.exports = {
   name: 'hug',
   aliases: ['cuddle', 'embrace'],
-  description: 'Hugs a tagged or quoted user with a toxic, realistic reaction',
+  description: 'Hugs a tagged or quoted user with a ➥ sir Njabulo AIメ, realistic reaction',
   run: async (context) => {
     const { client, m } = context;
 
@@ -11,7 +11,7 @@ module.exports = {
       if (!m.mentionedJid || m.mentionedJid.length === 0) {
         if (!m.quoted || !m.quoted.sender) {
           console.error('No tagged or quoted user provided');
-          return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, softie, tag someone or quote a message to hug! I ain’t hugging nobody without a target!`);
+          return m.reply(`Yo, softie, tag someone or quote a message to hug! I ain’t hugging nobody without a target!`);
         }
       }
 
@@ -24,20 +24,20 @@ module.exports = {
         (!targetUser.includes('@s.whatsapp.net') && !targetUser.includes('@lid'))
       ) {
         console.error(`Invalid target user: ${JSON.stringify(targetUser)}`);
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Invalid user, dumbass! Tag or quote a real person to hug!`);
+        return m.reply(`Invalid user, dumbass! Tag or quote a real person to hug!`);
       }
 
       const targetNumber = targetUser.split('@')[0];
       const senderNumber = m.sender.split('@')[0];
       if (!targetNumber || !senderNumber) {
         console.error(`Failed to extract numbers: target=${targetUser}, sender=${m.sender}`);
-        return m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Something’s fucked up with the user IDs. Try again, idiot!`);
+        return m.reply(`Something’s fucked up with the user IDs. Try again, idiot!`);
       }
 
       const huggingMsg = await client.sendMessage(
         m.chat,
         {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ @${senderNumber} is wrapping their arms around @${targetNumber}... 🤗\n│❒ This might get awkward, bitch!\n◈━━━━━━━━━━━━━━━━◈`,
+          text: `@${senderNumber} is wrapping their arms around @${targetNumber}... 🤗\nThis might get awkward, bitch!`,
           mentions: [m.sender, targetUser],
         },
         { quoted: m }
@@ -64,7 +64,7 @@ module.exports = {
       ];
       const intensity = intensities[Math.floor(Math.random() * intensities.length)];
 
-      const resultMsg = `◈━━━━━━━━━━━━━━━━◈
+      const resultMsg = `
 *HUG REPORT* ${intensity.emoji}
 
 *HUGGER:* @${senderNumber}
@@ -74,7 +74,7 @@ module.exports = {
 *VERDICT:* ${intensity.description.replace('@TARGET', `@${targetNumber}`).replace('@SENDER', `@${senderNumber}`)}
 
 *DISCLAIMER:* This hug was 100% real, you emotional wreck! Deal with it! 😈
-◈━━━━━━━━━━━━━━━━◈`;
+`;
 
       await client.sendMessage(
         m.chat,
@@ -94,7 +94,7 @@ module.exports = {
       }
     } catch (error) {
       console.error(`Hug command exploded: ${error.stack}`);
-      await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke harder than your heart! Can’t hug right now, you pathetic fuck.`);
+      await m.reply(`Shit broke harder than your heart! Can’t hug right now, you pathetic fuck.`);
     }
   },
 };

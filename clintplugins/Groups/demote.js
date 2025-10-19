@@ -12,14 +12,14 @@ module.exports = {
       if (!botname) {
         console.error('Toxic-MD: Botname not set in context');
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Bot’s fucked, ${m.pushName}! 😤 No botname set. Yell at the dev, dipshit! 💀\n┗━━━━━━━━━━━━━━━┛`
+          `Bot’s fucked, ${m.pushName}! 😤 No botname set. Yell at the dev, dipshit! 💀`
         );
       }
 
       if (!m.isGroup) {
         console.log(`Toxic-MD: Demote command attempted in non-group chat by ${m.sender}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, ${m.pushName}, you dumb fuck! 😈 This ain’t a group! Use ${prefix}demote in a group, moron! 🖕\n┗━━━━━━━━━━━━━━━┛`
+          `Yo, ${m.pushName}, you dumb fuck! 😈 This ain’t a group! Use ${prefix}demote in a group, moron! 🖕`
         );
       }
 
@@ -30,7 +30,7 @@ module.exports = {
       } catch (e) {
         console.error(`Toxic-MD: Error fetching group metadata: ${e.stack}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! 😤 Couldn’t get group data: ${e.message}. Fix this crap! 💀\n┗━━━━━━━━━━━━━━━┛`
+          `Shit broke, ${m.pushName}! 😤 Couldn’t get group data: ${e.message}. Fix this crap! 💀`
         );
       }
 
@@ -44,15 +44,15 @@ module.exports = {
       if (!admins.includes(botId)) {
         console.log(`Toxic-MD: Bot ${botId} is not admin in ${m.chat}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ OI, ${m.pushName}! 😤 I ain’t admin, so I can’t demote anyone! Make me admin or fuck off! 🚫\n┗━━━━━━━━━━━━━━━┛`
+          `OI, ${m.pushName}! 😤 I ain’t admin, so I can’t demote anyone! Make me admin or fuck off! 🚫`
         );
       }
 
       // Check for mentioned or quoted user
       if (!m.quoted && (!m.mentionedJid || m.mentionedJid.length === 0)) {
-        console.log(`Toxic-MD: No user mentioned or quoted for demote by ${m.pushName}`);
+        console.log(`➥ sir Njabulo AIメ: No user mentioned or quoted for demote by ${m.pushName}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Brain-dead moron, ${m.pushName}! 😡 Mention or quote a user to demote! Try ${prefix}demote @user, idiot! 🖕\n┗━━━━━━━━━━━━━━━┛`
+          `Brain-dead moron, ${m.pushName}! 😡 Mention or quote a user to demote! Try ${prefix}demote @user, idiot! 🖕`
         );
       }
 
@@ -60,7 +60,7 @@ module.exports = {
       if (!user) {
         console.log(`Toxic-MD: Invalid user for demote in ${m.chat}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ What the fuck, ${m.pushName}? 😳 No valid user to demote! Try again, you useless shit! 💀\n┗━━━━━━━━━━━━━━━┛`
+          `What the fuck, ${m.pushName}? 😳 No valid user to demote! Try again, you useless shit! 💀`
         );
       }
 
@@ -76,7 +76,7 @@ module.exports = {
       if (user.split(':')[0] === ownerNumber.split(':')[0]) {
         console.log(`Toxic-MD: Attempt to demote owner ${user} by ${m.pushName}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ YOU PATHETIC WORM, ${m.pushName}! 😤 Trying to demote the SUPREME BOSS? You’re lower than dirt! 🦄\n┗━━━━━━━━━━━━━━━┛`
+          `YOU PATHETIC WORM, ${m.pushName}! 😤 Trying to demote the SUPREME BOSS? You’re lower than dirt! 🦄`
         );
       }
 
@@ -84,7 +84,7 @@ module.exports = {
       if (!admins.includes(user.split(':')[0])) {
         console.log(`Toxic-MD: User ${userName} (${user}) is not admin in ${m.chat}`);
         return m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, ${m.pushName}, you dumbass! 😎 ${userName} ain’t even admin! Stop fucking around! 🖕\n┗━━━━━━━━━━━━━━━┛`
+          `Yo, ${m.pushName}, you dumbass! 😎 ${userName} ain’t even admin! Stop fucking around! 🖕`
         );
       }
 
@@ -92,13 +92,13 @@ module.exports = {
         await client.groupParticipantsUpdate(m.chat, [user], 'demote');
         console.log(`Toxic-MD: Successfully demoted ${userName} (${user}) in ${m.chat}`);
         await m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ HAHA, ${userName} GOT STRIPPED! 😈 No more admin for this loser, thanks to *${botname}*! Beg for mercy, trash! 🎗️\n┗━━━━━━━━━━━━━━━┛`,
+          `HAHA, ${userName} GOT STRIPPED! 😈 No more admin for this loser, thanks to *${botname}*! Beg for mercy, trash! 🎗️`,
           { mentions: [user] }
         );
       } catch (error) {
         console.error(`Toxic-MD: Demote command error: ${error.stack}`);
         await m.reply(
-          `◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, ${m.pushName}! 😤 Couldn’t demote ${userName}: ${error.message}. Try later, incompetent fuck! 💀\n┗━━━━━━━━━━━━━━━┛`
+          `Shit broke, ${m.pushName}! 😤 Couldn’t demote ${userName}: ${error.message}. Try later, incompetent fuck! 💀`
         );
       }
     });

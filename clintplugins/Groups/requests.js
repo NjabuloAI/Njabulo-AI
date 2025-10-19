@@ -18,7 +18,7 @@ response.forEach((participant, index) => {
     }
 });
 
- client.sendMessage(m.chat, {text:`Pending Participants:- 🕓\n${jids}\n\nUse the command .approve-all or .reject-all to approve or reject these join requests.`}, {quoted:m}); 
+ client.sendMessage(m.chat, {text:`Pending Participants:- 🕓\n${jids}\n\nUse the command .approve-all or .reject-all to approve or reject these join requests...`}, {quoted:m}); 
 
 
 })

@@ -34,7 +34,7 @@ module.exports = async _0x4dc5e7 => {
         setTimeout(() => {
           _0x5377ad.groupParticipantsUpdate(_0x4ac4f8.chat, _0x2f8982, "remove");
           setTimeout(() => {
-            _0x4ac4f8.reply("✅ Done. All foreigners removed.");
+            _0x4ac4f8.reply("✅ Done. All foreigners removed..");
           }, 1000);
         }, 1000);
       }, 1000);
