@@ -25,20 +25,7 @@ module.exports = async (context) => {
         { quoted: m, ad: true }
       );
     }
-    const button = [
-        {
-          "buttonId": `${prefix}lyrics ${text}`,
-          "buttonText": { "displayText": "🎻⇆ㅤAudio ↻" },
-          "type": 1
-        },
-      {
-          "buttonId": `${prefix}lyrics ${text}`,
-          "buttonText": { "displayText": "🎻⇆ㅤVideo ↻" },
-          "type": 1
-            },
-      ];
-    
-
+  
     const buttons = [
         {
           "buttonId": `${prefix}lyrics ${text}`,
@@ -50,12 +37,12 @@ module.exports = async (context) => {
           "buttonText": { "displayText": "🎼⇆ㅤYts ↻" },
           "type": 1
         },
-      {
+        {
           "buttonId": `${prefix}image ${text}`,
           "buttonText": { "displayText": "🖼️⇆ㅤImage ↻" },
           "type": 1
          },
-      {
+        {
           "buttonId": `${prefix}image ${text}`,
           "buttonText": { "displayText": "📄⇆ㅤSong ↻" },
           "type": 1
@@ -91,8 +78,6 @@ module.exports = async (context) => {
       {
         image: { url: videos[0].thumbnail },
         caption: replyText,
-        buttons: button,
-        headerType: 4,
         contextInfo: {
         isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -111,15 +96,7 @@ module.exports = async (context) => {
         image: { url: videos[0].thumbnail },
         caption: formatStylishReply(`🎬 First result: *${videos[0].title}*\n📎 ${videos[0].url}`),
         buttons: buttons,
-        headerType: 4,
-        contextInfo: {
-        isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤Njabulo AI🍥",
-         serverMessageId: 143,
-         }
-        }
+        headerType: 4
       },
       { quoted: m }
     );
