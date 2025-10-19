@@ -3,7 +3,7 @@ module.exports = async (context) => {
 const { client, m, text } = context;
 
 if (!text) return m.reply(`Where is the link?`)
-if (!text.includes('github.com')) return m.reply(`Is that a GitHub repo link ?!`)
+if (!text.includes('github.com')) return m.reply(`Ready to fuck shit up? *➥ sir Njabulo AIメ* \nIs that a GitHub repo link ?!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user3, repo] = text.match(regex1) || []
     repo = repo.replace(/.git$/, '')

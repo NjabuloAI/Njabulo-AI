@@ -15,7 +15,7 @@ module.exports = async (context) => {
   const { client, m, text } = context;
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+    return `Ready to fuck shit up? *➥ sir Njabulo AIメ*  ${message}`;
   };
 
   if (!text || !isValidYouTubeUrl(text)) {
@@ -68,7 +68,7 @@ module.exports = async (context) => {
         contextInfo: {
           externalAdReply: {
             title: "YouTube Audio",
-            body: "Quality: 128K | Powered by Toxic-MD",
+            body: "Quality: 128K | General by ➥ sir Njabulo AIメ",
             thumbnailUrl,
             sourceUrl: text,
             mediaType: 1,

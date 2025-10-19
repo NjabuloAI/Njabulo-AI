@@ -4,7 +4,7 @@ module.exports = async (context) => {
     const { client, m, text } = context;
 
     const formatStylishReply = (message) => {
-        return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈\n> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ`;
+        return ` ${message}`;
     };
 
     const isValidYouTubeUrl = (url) => {
@@ -82,7 +82,7 @@ module.exports = async (context) => {
                 contextInfo: {
                     externalAdReply: {
                         title: "YouTube Video",
-                        body: `Quality: ${data.result.video.quality || "HD"} | Powered by Toxic-MD`,
+                        body: `Quality: ${data.result.video.quality || "HD"} | General by ➥ sir Njabulo AIメ`,
                         thumbnailUrl,
                         sourceUrl: text,
                         mediaType: 2,

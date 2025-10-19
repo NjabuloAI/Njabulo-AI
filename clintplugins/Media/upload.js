@@ -30,7 +30,7 @@ let fta2 = await client.downloadAndSaveMediaMessage(q)
 
     m.reply(`Media Link:-\n\n${link}`)
   } else {
-    m.reply(`Error occured...`)
+    m.reply(`Error occured....`)
   }
               
       

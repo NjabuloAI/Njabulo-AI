@@ -14,7 +14,7 @@ let acr = new acrcloud({
     access_secret: 'wXOZIqdMNZmaHJP1YDWVyeQLg579uK2CfY6hWMN8'
   });
 
-if (!/video|audio/.test(mime)) return m.reply("Tag a short video or audio for the bot to analyse.");
+if (!/video|audio/.test(mime)) return m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* \nTag a short video or audio for the bot to analyse.");
 
 let p = m.quoted ? m.quoted : m
 

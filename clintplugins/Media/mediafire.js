@@ -41,7 +41,7 @@ try {
 
 
 if (!fileInfo || !fileInfo.length) {
-    return m.reply("Sorry, this file is no longer stored in mediafire.");
+    return m.reply("Sorry, this file is no longer stored in mediafire...");
 }
 
 

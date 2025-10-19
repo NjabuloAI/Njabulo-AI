@@ -2,7 +2,7 @@ module.exports = async (context) => {
   const { client, m, text, fetchJson } = context;
 
   const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈`;
+    return `Ready to fuck shit up? *➥ sir Njabulo AIメ*  ${message}`;
   };
 
   // Check if song name is provided

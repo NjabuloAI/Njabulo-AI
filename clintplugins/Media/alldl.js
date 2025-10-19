@@ -23,7 +23,7 @@ await client.sendMessage(m.chat,{video : {url : allvid },caption : `Downloaded b
 
 } catch (e) {
 
-m.reply("An error occured. API might be down\n" + e)
+m.reply("An error occured. API might be down.\n" + e)
 
 }
 

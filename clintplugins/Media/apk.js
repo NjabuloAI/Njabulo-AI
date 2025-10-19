@@ -17,7 +17,7 @@ let data = await fetchJson (`https://bk9.fun/search/apk?q=${text}`);
 
 } catch (error) {
 
-m.reply("Apk download failed\n" + error)
+m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* Apk download failed\n" + error)
 
 }
 };

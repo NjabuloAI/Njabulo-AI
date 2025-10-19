@@ -15,12 +15,12 @@ module.exports = async (context) => {
                 return data;
             }
         }
-        throw new Error("Failed to fetch valid TikTok data after multiple attempts.");
+        throw new Error("Failed to fetch valid TikTok data after multiple attempts..");
     };
 
     try {
         if (!text) return m.reply("Provide a TikTok link for the audio.");
-        if (!text.includes("tiktok.com")) return m.reply("That is not a valid TikTok link.");
+        if (!text.includes("tiktok.com")) return m.reply("That is not a valid TikTok link..");
 
         const url = `https://api.dreaded.site/api/tiktok?url=${text}`;
         const data = await fetchTikTokData(url);
