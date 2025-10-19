@@ -24,7 +24,7 @@ await client.sendMessage(m.chat, { image: { url: img}, caption: `Channel Name:- 
 
 } catch (error) {
 
-m.reply("Error occured\n" + error)
+m.reply("Error occured.\n" + error)
 
 }
 

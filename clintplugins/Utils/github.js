@@ -2,7 +2,7 @@ module.exports = async (context) => {
 
 const { client, m, text } = context;
 
-if (!text) return m.reply('Provide a github username to stalk');
+if (!text) return m.reply('Provide a github username to stalk..');
 
 try {
 

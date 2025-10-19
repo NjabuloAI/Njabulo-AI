@@ -13,7 +13,7 @@ module.exports = async (context) => {
         await m.reply(message);
 
     } catch (error) {
-        m.reply('Something went wrong. Unable to fetch EPL standings.');
+        m.reply('Something went wrong. Unable to fetch EPL standings..');
     }
 
 }

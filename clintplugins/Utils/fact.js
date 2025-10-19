@@ -14,7 +14,7 @@ await m.reply(fact);
 
 } catch (error) {
 
-m.reply('Something is wrong.')
+m.reply('Something is wrong..')
 
 }
 

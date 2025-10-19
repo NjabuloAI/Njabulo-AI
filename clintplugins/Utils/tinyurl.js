@@ -29,6 +29,6 @@ module.exports = async (context) => {
         );
     } catch (e) {
         console.error("Error occurred:", e);
-        m.reply("An error occurred while shortening the URL. Please try again later.");
+        m.reply("An error occurred while shortening the URL. Please try again later..");
     }
 };

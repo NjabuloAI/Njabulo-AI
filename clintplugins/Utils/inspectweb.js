@@ -39,7 +39,7 @@ module.exports = async (context) => {
             }
         });
 
-        await m.reply(`**Full HTML Content**:\n\n${html}`);
+        await m.reply(`*Full HTML Content*:\n\n${html}`);
 
         if (cssFiles.length > 0) {
             for (const cssFile of cssFiles) {

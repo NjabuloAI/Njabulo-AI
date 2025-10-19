@@ -7,7 +7,7 @@ const { client, m, text, botname } = context;
 
 
 try {
-let cap = `Screenshot by ${botname}`
+let cap = `Screenshot General by ${botname}`
 
 if (!text) return m.reply("Provide a website link to screenshot.")
 
