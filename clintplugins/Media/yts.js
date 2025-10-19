@@ -25,34 +25,6 @@ module.exports = async (context) => {
         { quoted: m, ad: true }
       );
     }
-  
-    const buttons = [
-        {
-          "buttonId": `${prefix}lyrics ${text}`,
-          "buttonText": { "displayText": "🎻⇆ㅤLyrics ↻" },
-          "type": 1
-        },
-        {
-          "buttonId": `${prefix}yts ${text}`,
-          "buttonText": { "displayText": "🎼⇆ㅤYts ↻" },
-          "type": 1
-        },
-        {
-          "buttonId": `${prefix}image ${text}`,
-          "buttonText": { "displayText": "🖼️⇆ㅤImage ↻" },
-          "type": 1
-         },
-        {
-          "buttonId": `${prefix}image ${text}`,
-          "buttonText": { "displayText": "📄⇆ㅤSong ↻" },
-          "type": 1
-        },
-        {
-          "buttonId": `${prefix}video ${text}`,
-          "buttonText": { "displayText": "🎥⇆ㅤVideo ↻" },
-          "type": 1
-        },
-      ];
     
     // Take first 5 results
     const videos = searchResult.videos.slice(0, 5);
@@ -72,14 +44,31 @@ module.exports = async (context) => {
     }
 
     replyText += `________________________\n*🍥 General by Njabulo Jb*`;
+ 
+    const buttons = [
+        {
+          "buttonId": `${prefix}image ${text}`,
+          "buttonText": { "displayText": "🖼️⇆ㅤImage ↻" },
+          "type": 1
+         },
+      {
+          "buttonId": `${prefix}image ${text}`,
+          "buttonText": { "displayText": "📄⇆ㅤAudio ↻" },
+          "type": 1
+        },
+        {
+          "buttonId": `${prefix}video ${text}`,
+          "buttonText": { "displayText": "🎥⇆ㅤVideo ↻" },
+          "type": 1
+        },
+      ];
 
     await client.sendMessage(
       m.chat,
-      {
-        image: { url: videos[0].thumbnail },
-        caption: replyText
-      }, { quoted: m, ad: true }
+      { text: replyText },
+      { quoted: m, ad: true }
     );
+  
 
     // Optionally send thumbnail of the first result
     await client.sendMessage(
