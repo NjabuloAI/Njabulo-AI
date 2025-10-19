@@ -47,7 +47,18 @@ module.exports = async (context) => {
     // Send up to this many images (adjust if you want fewer/more)
     const MAX_SEND = 5;
     const imagesToSend = allImages.slice(0, MAX_SEND);
-
+    const buttons = [
+        {
+          "buttonId": `${prefix}img`,
+          "buttonText": { "displayText": "🌠night" },
+          "type": 1
+        },
+        {
+          "buttonId": `${prefix}image`,
+          "buttonText": { "displayText": "🖼️picture" },
+          "type": 1
+        },
+      ];
     // Notify how many we'll send
     await client.sendMessage(
       m.chat,
@@ -62,7 +73,7 @@ module.exports = async (context) => {
         const { buffer, mime } = await downloadImageBuffer(imgUrl);
 
         // Prepare caption with toxic flavor and minimal metadata
-        const caption = formatStylishReply(`🔎 Search: ${text}\n🌐 Source: Toxic-MD\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`);
+        const caption = formatStylishReply(`🔎 Search: ${text}\n🌐 Source: Njabulo AI\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`);
 
         await client.sendMessage(
           m.chat,
@@ -70,6 +81,8 @@ module.exports = async (context) => {
             image: buffer,
             mimetype: mime,
             caption,
+            buttons: buttons,
+            headerType: 4
           },
           { quoted: m }
         );
@@ -85,6 +98,8 @@ module.exports = async (context) => {
             {
               image: { url: imgUrl },
               caption: formatStylishReply(`🔎 Fallback send for: ${text}\n🌐 Source: Njabulo AI\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`),
+            buttons: buttons,
+            headerType: 4
             },
             { quoted: m }
           );
