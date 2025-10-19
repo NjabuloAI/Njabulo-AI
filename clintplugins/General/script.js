@@ -38,8 +38,8 @@ module.exports = async (context) => {
 
     const createdDate = new Date(repoInfo.createdAt).toLocaleDateString('en-GB');
     const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
-    const urlimage = "https://files.catbox.moe/eylfig.jpg";
-    const replyText = `*${botname} Repo*\n\n` +
+    const urlimage = "https://files.catbox.moe/lhmme5.jpg";
+    const replyText = `*🌐${botname} Repository 🌐*\n\n` +
                      `🌟 *Sƚαɾʂ*: ${repoInfo.stars}\n` +
                      `🔗 *Fσɾƙʂ*: ${repoInfo.forks}\n` +
                      `📅 *Cɾҽαƚҽԃ*: ${createdDate}\n` +
@@ -72,6 +72,15 @@ await client.sendMessage(m.chat, {
                 }
             }
         } });
+
+    
+      // Send the audio as a voice note after the ping message
+      const audioUrl = 'https://files.catbox.moe/4ufunx.mp3';
+      await client.sendMessage(m.chat, {
+        audio: { url: audioUrl },
+        mimetype: 'audio/mp4',
+        ptt: true
+      }, { quoted: m });
         
   } catch (error) {
     console.error('Error in repo command:', error);
