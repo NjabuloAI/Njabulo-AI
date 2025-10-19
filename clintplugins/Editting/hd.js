@@ -72,6 +72,6 @@ module.exports = async (context) => {
 
     } catch (err) {
         console.error("Error:", err);
-        m.reply("An error occurred while processing the image.");
+        m.reply("An error occurred while processing the image..");
     }
 };

@@ -34,6 +34,6 @@ module.exports = async (context) => {
             await m.reply(replyMessage);
         }
     } else {
-        await m.reply("Quote an image and type *negro* to apply the black filter.");
+        await m.reply("Quote an image and type *negro* to apply the black filter..");
     }
 };

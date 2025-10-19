@@ -42,6 +42,6 @@ module.exports = async (context) => {
     }
   } catch (err) {
     console.error("Logo generation error:", err);
-    await m.reply("An error occurred while creating the logo.");
+    await m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* An error occurred while creating the logo.");
   }
 };

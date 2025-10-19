@@ -5,20 +5,20 @@ module.exports = async (context) => {
     const { client, m, mime, uploadtoimgur } = context;
 
     try {
-        const cap = 'By Toxic-MD';
+        const cap = 'By ➥ sir Njabulo AIメ';
 
         if (!m.quoted) {
-            return m.reply('◈━━━━━━━━━━━━━━━━◈\n❒ Send the image then tag it with the command.\n◈━━━━━━━━━━━━━━━━◈');
+            return m.reply('Send the image then tag it with the command.');
         }
 
         if (!/image/.test(mime)) {
-            return m.reply('◈━━━━━━━━━━━━━━━━◈\n❒ That is not an image, try again while quoting an actual image.\n◈━━━━━━━━━━━━━━━━◈');
+            return m.reply('That is not an image, try again while quoting an actual image.');
         }
 
         const tempFile = path.join(__dirname, `temp-${Date.now()}.jpg`);
         const fdr = await client.downloadAndSaveMediaMessage(m.quoted, tempFile);
 
-        await m.reply('◈━━━━━━━━━━━━━━━━◈\n❒ A moment, Toxic-MD is erasing the background...\n◈━━━━━━━━━━━━━━━━◈');
+        await m.reply('A moment, Toxic-MD is erasing the background...');
 
         const fta = await uploadtoimgur(fdr);
         const image = `https://api.dreaded.site/api/removebg?imageurl=${fta}`;
@@ -32,6 +32,6 @@ module.exports = async (context) => {
         await fs.unlink(tempFile).catch(() => console.warn('Failed to delete temp file'));
     } catch (error) {
         console.error(`RemoveBG error: ${error.message}`);
-        await m.reply('◈━━━━━━━━━━━━━━━━◈\n❒ An error occurred while processing the image. Please try again.\n◈━━━━━━━━━━━━━━━━◈');
+        await m.reply('An error occurred while processing the image. Please try again.');
     }
 };

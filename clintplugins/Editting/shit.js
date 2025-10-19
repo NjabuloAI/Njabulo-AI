@@ -28,7 +28,7 @@ try {
 
 } catch (e) {
 
-m.reply("Something wrong occured. 😞")  
+m.reply("Something wrong occured..😞")  
 
 }
     }

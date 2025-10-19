@@ -23,7 +23,7 @@ if (!m.quoted) return m.reply('Tag a static video with the command!');
     }); 
 
 } catch (e) {
- m.reply('I am unable to convert animated stickers')}
+ m.reply('I am unable to convert animated stickers...')}
 
 */
     } 
