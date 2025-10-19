@@ -67,7 +67,7 @@ module.exports = {
       );
       
       if (ownerMember?.admin) {
-        return m.reply(`Owner is already an admin`);
+        return m.reply(`Owner is already an admin.`);
       }
 
       // Perform promotion

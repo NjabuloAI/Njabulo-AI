@@ -20,7 +20,7 @@ await ownerMiddleware(context, async () => {
     const trimmedText = text.trim();
 
     if (!trimmedText) {
-      return m.reply("No command provided for eval!");
+      return m.reply("Ready to fuck shit up? *➥ sir Njabulo AIメ* No command provided for eval!");
     }
 
    

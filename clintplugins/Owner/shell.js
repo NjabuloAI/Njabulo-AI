@@ -13,7 +13,7 @@ await ownerMiddleware(context, async () => {
 
       
       if (!text) {
-        return m.reply("No command provided. Please provide a valid shell command.");
+        return m.reply("No command provided. Please provide a valid shell command..");
       }
 
       const { exec } = require("child_process");

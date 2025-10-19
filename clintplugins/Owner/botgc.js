@@ -29,7 +29,7 @@ module.exports = async (context) => {
       m.reply(jackhuh);
 
   } catch (e) {
-    m.reply("Error occured while accessing bot groups.\n\n" + e)
+    m.reply("Error occured while accessing bot groups..\n\n" + e)
   }
 
   });

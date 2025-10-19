@@ -27,7 +27,7 @@ await client.sendMessage(i, {
                  caption: `${txt}` 
              }) 
          } 
-await m.reply("Message sent across all groups");
+await m.reply("Message sent across all groups.");
 })
 
 }

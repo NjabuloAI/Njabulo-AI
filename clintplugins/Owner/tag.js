@@ -7,7 +7,7 @@ module.exports = async (context) => {
         const { client, m, args, participants, text } = context;
 
 
-if (!m.isGroup) return m.reply('Command meant for groups');
+if (!m.isGroup) return m.reply('Command meant for groups...');
 
 
 

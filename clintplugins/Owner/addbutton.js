@@ -18,7 +18,7 @@ module.exports = {
       await client.sendMessage(m.chat, { text: `Added button "${buttonName}" for command "${command}"` }, { quoted: m });
     } catch (error) {
       console.error(`AddButton error: ${error.stack}`);
-      await client.sendMessage(m.chat, { text: 'Error adding custom button.' }, { quoted: m });
+      await client.sendMessage(m.chat, { text: 'Error adding custom button..' }, { quoted: m });
     }
   }
 };
