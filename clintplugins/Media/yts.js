@@ -77,15 +77,7 @@ module.exports = async (context) => {
       m.chat,
       {
         image: { url: videos[0].thumbnail },
-        caption: replyText,
-        contextInfo: {
-        isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤Njabulo AI🍥",
-         serverMessageId: 143,
-         }
-        }   
+        caption: replyText
       }, { quoted: m, ad: true }
     );
 
