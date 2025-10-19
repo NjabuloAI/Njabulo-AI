@@ -62,18 +62,33 @@ module.exports = async (context) => {
       .replace(/\n\s*\n/g, '\n') 
       .trim();
 
+    const buttons = [
+        {
+          "buttonId": `${prefix}lyrics ${text}`,
+          "buttonText": { "displayText": "🎻⇆ㅤYts ↻" },
+          "type": 1
+        },
+      {
+        "buttonId": `${prefix}lyrics ${text}`,
+          "buttonText": { "displayText": "🎻⇆ㅤVideo ↻" },
+          "type": 1
+        },
+      {
+          "buttonId": `${prefix}lyrics ${text}`,
+          "buttonText": { "displayText": "🎻⇆ㅤAudio ↻" },
+          "type": 1
+            },
+      ];
+    
     // Format caption with song details
-    const caption =
-      "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
-      "│ ❒ LYRICS SEARCH\n" +
-      "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
-      `│ 🎵 Title: ${title}\n` +
-      `│ 🎤 Artist: ${artist || "Unknown"}\n` +
-      "│ 📜 Lyrics:\n" +
+    const caption = "LYRICS SEARCH\n" +
+      `🎵 Title: ${title}\n` +
+      `🎙️ Artist: ${artist || "Unknown"}\n` +
+      "📜 Lyrics:\n" +
       cleanedLyrics + "\n" +
-      "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
-      `│ ❒ Powered by ${botname}\n` +
-      "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈";
+      ".\n" +
+      `General by ${botname}\n` +
+      ".";
 
     // Send lyrics + cover art
     await client.sendMessage(
@@ -81,6 +96,16 @@ module.exports = async (context) => {
       {
         image: { url: image || pict }, // Use API image if available
         caption: caption,
+        buttons: buttons,
+        headerType: 4,
+        contextInfo: {
+        isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤Njabulo AI🍥",
+         serverMessageId: 143,
+         }
+        }
       },
       { quoted: m }
     );
