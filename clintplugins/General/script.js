@@ -54,7 +54,7 @@ module.exports = async (context) => {
         "type": 1
       },
       {
-        "buttonId":  `${prefix}web`,
+        "buttonId":  `${prefix}menu`,
         "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
         "type": 1
       }
