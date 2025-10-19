@@ -45,13 +45,23 @@ module.exports = async (context) => {
 
     const buttons = [
         {
-          "buttonId": `${prefix}img ${text}`,
-          "buttonText": { "displayText": "🎸audio" },
+          "buttonId": `${prefix}lyrics ${text}`,
+          "buttonText": { "displayText": "🎻Lyrics" },
           "type": 1
         },
         {
+          "buttonId": `${prefix}yts ${text}`,
+          "buttonText": { "displayText": "🎼Yts url" },
+          "type": 1
+        },
+        {
+          "buttonId": `${prefix}video ${text}`,
+          "buttonText": { "displayText": "🎥Video" },
+          "type": 1
+        },
+      {
           "buttonId": `${prefix}image ${text}`,
-          "buttonText": { "displayText": "📄document" },
+          "buttonText": { "displayText": "🖼️Image" },
           "type": 1
         },
       ];
@@ -80,7 +90,7 @@ module.exports = async (context) => {
       },
       { quoted: m, ad: true }
     );
-
+    
     // Use the new API endpoint
     const apiUrl = `https://api.privatezia.biz.id/api/downloader/ytmp3?url=${encodeURIComponent(video.url)}`;
     
