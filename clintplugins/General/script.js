@@ -47,9 +47,24 @@ module.exports = async (context) => {
                      `🔍 *Vιʂιƚ*: ${repoInfo.htmlUrl}\n\n` +
                      `@⁨ ${m.pushName}⁩👋 Don't forget to star and fork my repository`;
 
+    const buttons = [
+      {
+        "buttonId":  `${prefix}ping`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ρong" },
+        "type": 1
+      },
+      {
+        "buttonId":  `${prefix}web`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
+        "type": 1
+      }
+    ];
+    
 await client.sendMessage(m.chat, {
     image: { url: urlimage },
      caption: replyText,
+     buttons: buttons,
+        headerType: 4,
       contextInfo: {
         externalAdReply: {
          title: "Repository 🍥Njabulo AI",
