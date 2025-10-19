@@ -20,6 +20,6 @@ URL:- ${con.content_urls.mobile.page}
             m.reply(texa)
         } catch (err) {
             console.log(err)
-            return m.reply(`Got 404. I did not find anything!`)
+            return m.reply(`Got 404. I did not find anything!.`)
         }
     }

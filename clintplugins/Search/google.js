@@ -24,7 +24,7 @@ module.exports = async (context) => {
         "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
         "│ ❒ ERROR\n" +
         "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
-        "│ ❌ Unable to find any results\n" +
+        "│ ❌ Unable to find any results.\n" +
         "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈"
       );
       return;

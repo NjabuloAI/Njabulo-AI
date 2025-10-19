@@ -83,7 +83,7 @@ module.exports = async (context) => {
       "│ ❒ ERROR\n" +
       "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈\n" +
       "│ ❌ Error fetching wallpapers: " + err.message + "\n" +
-      "│ ❒ Please try again later.\n" +
+      "│ ❒ Please try again later..\n" +
       "◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈"
     );
   }
