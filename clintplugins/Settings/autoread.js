@@ -6,7 +6,7 @@ module.exports = async (context) => {
     const { client, m, args, prefix } = context;
 
     const formatStylishReply = (message) => {
-      return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n┗━━━━━━━━━━━━━━━┛`;
+      return `yo ${message}`;
     };
 
     try {
@@ -48,7 +48,7 @@ module.exports = async (context) => {
         m.chat,
         {
           text: formatStylishReply(`Autoread’s ${settings.autoread ? 'ON 🥶' : 'OFF 😴'}, dumbass. Pick a vibe, noob! 😈`),
-          footer: "> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ",
+          footer: "> Pσɯҽɾԃ Ⴆყ NנɐႦυℓσ JႦ",
           buttons,
           headerType: 1,
           viewOnce: true,

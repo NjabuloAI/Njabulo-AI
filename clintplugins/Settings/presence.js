@@ -6,7 +6,7 @@ module.exports = async (context) => {
     const { client, m, args, prefix } = context;
 
     const formatStylishReply = (message) => {
-      return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n┗━━━━━━━━━━━━━━━┛`;
+      return `yo ${message}`;
     };
 
     try {
@@ -50,7 +50,7 @@ module.exports = async (context) => {
         m.chat,
         {
           text: formatStylishReply(`Presence is ${settings.presence ? settings.presence.toUpperCase() : 'NONE'}. Pick a vibe, fam! 🔥`),
-          footer: "> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ",
+          footer: "> Pσɯҽɾԃ Ⴆყ NנɐႦυℓσ JႦ",
           buttons,
           headerType: 1,
           viewOnce: true,

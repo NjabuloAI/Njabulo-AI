@@ -10,7 +10,7 @@ module.exports = async (context) => {
 
         if (!jid.endsWith('@g.us')) {
             console.log('The command was not issued in a group chat.');
-            return await m.reply('❌ This command can only be used in groups.');
+            return await m.reply('❌ This command can only be used in groups..');
         }
 
         console.log(`Fetching group settings for group: ${jid}`);

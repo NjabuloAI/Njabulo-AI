@@ -8,7 +8,7 @@ module.exports = async (context) => {
         const jid = m.chat;
 
         if (!jid.endsWith('@g.us')) {
-            return await m.reply('❌ This command can only be used in groups.');
+            return await m.reply('❌ This command can only be used in groups..');
         }
 
         const settings = await getSettings();

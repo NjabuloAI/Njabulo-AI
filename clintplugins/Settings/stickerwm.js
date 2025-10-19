@@ -18,7 +18,7 @@ module.exports = async (context) => {
                     return await m.reply(`✅ The bot already has no sticker watermark.`);
                 }
                 await updateSetting('packname', '');
-                await m.reply(`✅ The bot now has no sticker watermark.`);
+                await m.reply(`✅ The bot now has no sticker watermark..`);
             } else {
                 if (settings.packname === newStickerWM) {
                     return await m.reply(`✅ The sticker watermark was already set to: ${newStickerWM}`);

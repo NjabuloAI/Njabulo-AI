@@ -40,7 +40,7 @@ module.exports = async (context) => {
         await m.reply(
           `◈━━━━━━━━━━━━━━━━◈\n` +
           `│❒ Status react emoji set to ${newEmoji}! 🔥\n` +
-          `│❒ Flexing it like a king! 😈\n` +
+          `│❒ Flexing it like a king! .😈\n` +
           `┗━━━━━━━━━━━━━━━┛`
         );
       }

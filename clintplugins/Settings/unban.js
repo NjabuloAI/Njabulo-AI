@@ -29,6 +29,6 @@ module.exports = async (context) => {
         }
 
         await unbanUser(numberToUnban);
-        await m.reply(`✅ ${numberToUnban} has been unbanned.`);
+        await m.reply(`✅ ${numberToUnban} has been unbanned..`);
     });
 };

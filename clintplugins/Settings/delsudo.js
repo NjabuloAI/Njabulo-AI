@@ -27,7 +27,7 @@ module.exports = async (context) => {
         const sudoUsers = await getSudoUsers();
 
         if (!sudoUsers.includes(numberToRemove)) {
-            return await m.reply('⚠️ This number is not a sudo user.');
+            return await m.reply('⚠️ This number is not a sudo user..');
         }
 
       

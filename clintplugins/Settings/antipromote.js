@@ -37,7 +37,7 @@ module.exports = async (context) => {
       await updateGroupSetting(jid, 'antipromote', action ? 'true' : 'false');
       await m.reply(
         `◈━━━━━━━━━━━━━━━━◈\n` +
-        `│❒ Antipromote ${value.toUpperCase()}! 🔥\n` +
+        `│Antipromote ${value.toUpperCase()}! 🔥\n` +
         `│❒ Promotions are under my control, king! 😈\n` +
         `┗━━━━━━━━━━━━━━━┛`
       );

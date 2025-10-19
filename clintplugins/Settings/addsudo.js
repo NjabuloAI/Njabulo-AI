@@ -18,7 +18,7 @@ module.exports = async (context) => {
     if (!numberToAdd || !/^\d+$/.test(numberToAdd)) {
       return await m.reply(
         `◈━━━━━━━━━━━━━━━━◈\n` +
-        `│❒ Pathetic attempt, moron! 😈\n` +
+        `│ Pathetic attempt, moron! 😈\n` +
         `│❒ Give me a valid number or quote a user, fool!\n` +
         `┗━━━━━━━━━━━━━━━┛`
       );

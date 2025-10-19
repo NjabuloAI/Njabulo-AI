@@ -8,18 +8,18 @@ module.exports = async (context) => {
     const jid = m.chat;
 
     if (!jid.endsWith('@g.us')) {
-      return await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, dumbass, this command’s for groups only. Get lost.`);
+      return await m.reply(`Yo, dumbass, this command’s for groups only. Get lost.`);
     }
 
     try {
       const settings = await getSettings();
       if (!settings) {
-        return await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Database is fucked, no settings found. Fix it, loser.`);
+        return await m.reply(`Database is fucked, no settings found. Fix it, loser.`);
       }
 
       let groupSettings = await getGroupSetting(jid);
       if (!groupSettings) {
-        return await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ No group settings found. Database’s acting up, try again.`);
+        return await m.reply(`No group settings found. Database’s acting up, try again.`);
       }
 
       let isEnabled = groupSettings?.antiforeign === true;
@@ -31,23 +31,23 @@ module.exports = async (context) => {
 
       if (value === 'on' || value === 'off') {
         if (!isBotAdmin) {
-          return await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Make me an admin first, you clown. Can’t touch antiforeign without juice.`);
+          return await m.reply(`Make me an admin first, you clown. Can’t touch antiforeign without juice.`);
         }
 
         const action = value === 'on';
 
         if (isEnabled === action) {
-          return await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Antiforeign’s already ${value.toUpperCase()}, genius. Stop wasting my time.`);
+          return await m.reply(`Antiforeign’s already ${value.toUpperCase()}, genius. Stop wasting my time.`);
         }
 
         await updateGroupSetting(jid, 'antiforeign', action);
-        await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Antiforeign’s now ${value.toUpperCase()}. Foreigners better watch out or get yeeted!`);
+        await m.reply(`Antiforeign’s now ${value.toUpperCase()}. Foreigners better watch out or get yeeted!`);
       } else {
-        await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Antiforeign’s ${isEnabled ? 'ON' : 'OFF'} in this group, dipshit.\n\nUse ${prefix}antiforeign on or ${prefix}antiforeign off to change it.`);
+        await m.reply(`Antiforeign’s ${isEnabled ? 'ON' : 'OFF'} in this group, dipshit.\n\nUse ${prefix}antiforeign on or ${prefix}antiforeign off to change it.`);
       }
     } catch (error) {
       console.error('[Antiforeign] Error in command:', error);
-      await m.reply(`◈━━━━━━━━━━━━━━━━◈\n│❒ Shit broke, couldn’t mess with antiforeign. Database or something’s fucked. Try later.`);
+      await m.reply(`Shit broke, couldn’t mess with antiforeign. Database or something’s fucked. Try later.`);
     }
   });
 };

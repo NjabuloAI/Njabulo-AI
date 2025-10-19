@@ -28,7 +28,7 @@ module.exports = async (context) => {
       if (isEnabled === action) {
         return await m.reply(
           `◈━━━━━━━━━━━━━━━━◈\n` +
-          `│❒ Antidemote is already ${value.toUpperCase()}, you brainless fool! 🥶\n` +
+          `│ Antidemote is already ${value.toUpperCase()}, you brainless fool! 🥶\n` +
           `│❒ Quit wasting my time! 🖕\n` +
           `┗━━━━━━━━━━━━━━━┛`
         );

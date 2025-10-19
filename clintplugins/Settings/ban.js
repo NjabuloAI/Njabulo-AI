@@ -7,7 +7,7 @@ module.exports = async (context) => {
 
         let settings = await getSettings();
         if (!settings) {
-            return await m.reply('❌ Settings not found.');
+            return await m.reply('❌ Settings not found..');
         }
 
         const sudoUsers = await getSudoUsers();

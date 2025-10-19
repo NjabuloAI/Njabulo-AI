@@ -8,7 +8,7 @@ module.exports = async (context) => {
         const bannedUsers = await getBannedUsers();
 
         if (!bannedUsers || bannedUsers.length === 0) {
-            return await m.reply('✅ There are no banned users at the moment.');
+            return await m.reply('✅ There are no banned users at the moment...');
         }
 
         const list = bannedUsers.map((num, index) => `${index + 1}. ${num}`).join('\n');

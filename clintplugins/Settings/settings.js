@@ -32,14 +32,14 @@ module.exports = async (context) => {
     ];
 
     const message = formatStylishReply(
-      `*Toxic-MD Settings* 🔥\n\n` +
+      `*➥ sir Njabulo AIメ Settings* 🔥\n` +
       `Botname: ${botName}\n` +
       `Prefix: ${settings.prefix || 'None'}\n` +
       `Antidelete: ${settings.antidelete ? '✅ ON' : '❌ OFF'}\n` +
       `Chatbot PM: ${settings.chatbotpm ? '✅ ON' : '❌ OFF'}\n` +
       `Sudo Users: ${sudoUsers.length > 0 ? sudoUsers.join(', ') : 'None'}\n` +
       `Banned Users: ${bannedUsers.length}\n` +
-      `Total Groups: ${groupCount}\n\n` +
+      `Total Groups: ${groupCount}\n` +
       `Tap a button to configure a setting! 😈`
     );
 
@@ -47,7 +47,7 @@ module.exports = async (context) => {
       m.chat,
       {
         text: message,
-        footer: '> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ',
+        footer: 'Genera by ➥ sir Njabulo AIメ',
         buttons,
         headerType: 1,
         viewOnce: true,

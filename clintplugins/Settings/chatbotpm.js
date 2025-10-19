@@ -6,7 +6,7 @@ module.exports = async (context) => {
     const { client, m, args, prefix } = context;
 
     const formatStylishReply = (message) => {
-      return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n┗━━━━━━━━━━━━━━━┛`;
+      return `yo ${message}`;
     };
 
     try {
@@ -32,7 +32,7 @@ module.exports = async (context) => {
           m.chat,
           {
             text: formatStylishReply(`Chatbot PM is currently ${settings.chatbotpm ? 'ENABLED' : 'DISABLED'}. Use ${prefix}chatbotpm on/off to toggle.`),
-            footer: "> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ",
+            footer: "> Pσɯҽɾԃ Ⴆყ NנɐႦυℓσ JႦ",
             buttons,
             headerType: 1,
             viewOnce: true,

@@ -6,7 +6,7 @@ module.exports = async (context) => {
     const { client, m, args, prefix } = context;
 
     const formatStylishReply = (message) => {
-      return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n┗━━━━━━━━━━━━━━━┛`;
+      return `yo ${message}`;
     };
 
     try {
@@ -49,7 +49,7 @@ module.exports = async (context) => {
         m.chat,
         {
           text: formatStylishReply(`Antilink Status: ${isEnabled ? 'ON 🥶' : 'OFF 😴'}. Pick a vibe, noob! 😈`),
-          footer: "> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ",
+          footer: "General by ➥ sir Njabulo AIメ",
           buttons,
           headerType: 1,
           viewOnce: true,

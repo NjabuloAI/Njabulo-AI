@@ -6,7 +6,7 @@ module.exports = async (context) => {
     const { client, m, args, prefix } = context;
 
     const formatStylishReply = (message) => {
-      return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n┗━━━━━━━━━━━━━━━┛`;
+      return `yo ${message}`;
     };
 
     try {
@@ -49,7 +49,7 @@ module.exports = async (context) => {
         m.chat,
         {
           text: formatStylishReply(`Autoview Status: ${settings.autoview ? 'ON ✅ (Watching all statuses)' : 'OFF ❌ (Ignoring statuses)'}\n\nPick an option, noob! 😈`),
-          footer: '> Pσɯҽɾԃ Ⴆყ Tσxιƈ-ɱԃȥ',
+          footer: '> Pσɯҽɾԃ Ⴆყ NנɐႦυℓσ JႦ',
           buttons,
           headerType: 1,
           viewOnce: true,
