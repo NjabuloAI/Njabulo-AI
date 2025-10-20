@@ -112,7 +112,7 @@ module.exports = async (context) => {
               image: { url: imgUrl },
               caption: formatStylishReply(`🔎 Fallback send for: ${text}\n🌐 Source: Njabulo-AI\n🖼 Image ${sentCount + 1}/${imagesToSend.length}`),
              buttons: buttons,
-             headerType: 4,
+             headerType: 4
            },
             { quoted: m }
           );
